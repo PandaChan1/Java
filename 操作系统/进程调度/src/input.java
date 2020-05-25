@@ -35,73 +35,16 @@ class Input {
         }
     }
     public static void FCFS(pcb[] pcbs, int q){ //先来先服务
-        //Arrays.sort(pcbs,0,q);
         Arrays.sort(pcbs,new pcb.sortbyIntime());
         calculate(pcbs);
-        /* int end1=pcbs[0].getIntime()+pcbs[0].getServ();
-         pcbs[0].setEnd(end1);
-       for (int i=1;i<pcbs.length;i++){ //完成时间
-           pcbs[i].setEnd(pcbs[i-1].getEnd()+pcbs[i].getServ());
-       }
-       for (int i=0;i<pcbs.length;i++){   //周转时间
-           pcbs[i].setRun(pcbs[i].getEnd()-pcbs[i].getIntime()); //周转时间=完成时间-进入时间
-       }
-       for (int i=0;i<pcbs.length;i++){ //带权周转时间
-           pcbs[i].setWrun((double)(pcbs[i].getRun()/pcbs[i].getServ())); //带权周转时间=周转时间/服务时间
-       }
-
-         System.out.println("标识符  进入时间  服务时间  优先级  完成时间  周转时间 带权周转时间");
-         for (int i=0;i<pcbs.length;i++){
-             System.out.print(pcbs[i].getTag());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getIntime());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getServ());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getPrio());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getEnd());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getRun());
-             System.out.print("        ");
-             System.out.println(pcbs[i].getWrun());
-         }*/
     }
     public static void PSA(pcb[] pcbs,int q){ //优先级优先
         Arrays.sort(pcbs,new pcb.sortbyPrio());
         calculate(pcbs);
-         /*int end1=pcbs[0].getIntime()+pcbs[0].getServ();
-         pcbs[0].setEnd(end1);
-         for (int i=1;i<pcbs.length;i++){  //完成时间
-             pcbs[i].setEnd(pcbs[i-1].getEnd()+pcbs[i].getServ());
-         }
-         for (int i=0;i<pcbs.length;i++){ //周转时间
-             pcbs[i].setRun(pcbs[i].getEnd()-pcbs[i].getIntime());
-         }
-         for (int i=0;i<pcbs.length;i++){ //带权周转时间
-             pcbs[i].setWrun((double) (pcbs[i].getRun()/pcbs[i].getServ()));
-         }
-         System.out.println("标识符  进入时间  服务时间  优先级  完成时间  周转时间 带权周转时间");
-         for (int i=0;i<pcbs.length;i++){
-             System.out.print(pcbs[i].getTag());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getIntime());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getServ());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getPrio());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getEnd());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getRun());
-             System.out.print("        ");
-             System.out.println(pcbs[i].getWrun());
-         }*/
+
     }
     public static void RR(pcb[] pcbs,int q){ //时间片轮转
         Arrays.sort(pcbs,new pcb.sortbyIntime());  //进入时间排序
-        // calculate(pcbs);
-        //List<pcb> al=new ArrayList<pcb>();
         Queue<pcb> que=new LinkedList<pcb>();
         int count=0;
         int sumtime=pcbs[0].getIntime();
@@ -156,52 +99,9 @@ class Input {
     public static void SJF(pcb[] pcbs,int q){  //短作业优先
         Arrays.sort(pcbs,new pcb.shortbyServ());
         calculate(pcbs);
-         /*int end1=pcbs[0].getIntime()+pcbs[0].getServ();
-         pcbs[0].setEnd(end1);
-         for (int i=1;i<pcbs.length;i++){  //完成时间
-             pcbs[i].setEnd(pcbs[i-1].getEnd()+pcbs[i].getServ());
-         }
-         for (int i=0;i<pcbs.length;i++){ //周转时间
-             pcbs[i].setRun(pcbs[i].getEnd()-pcbs[i].getIntime());
-         }
-         for (int i=0;i<pcbs.length;i++){ //带权周转时间
-             pcbs[i].setWrun((double) (pcbs[i].getRun()/pcbs[i].getServ()));
-         }
-         System.out.println("标识符  进入时间  服务时间  优先级  完成时间  周转时间 带权周转时间");
-         for (int i=0;i<pcbs.length;i++){
-             System.out.print(pcbs[i].getTag());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getIntime());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getServ());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getPrio());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getEnd());
-             System.out.print("        ");
-             System.out.print(pcbs[i].getRun());
-             System.out.print("        ");
-             System.out.println(pcbs[i].getWrun());
-         }*/
+
     }
-    /* public static void swap(pcb[] num, int x, int y){
-      String tag1;
-      int t;
-      int ser;
-      int por;
-      t=num[x].getIntime();
-      tag1=num[x].getTag();
-      ser=num[x].getServ();
-      por=num[x].getPrio();
-      num[x].setIntime(num[y].getIntime());
-      num[x].setTag(num[y].getTag());
-      num[x].setServ(num[y].getServ());
-      num[x].setPrio(num[y].getPrio());
-      num[y].setIntime(t);
-      num[y].setTag(tag1);
-      num[y].setServ(ser);
-      num[y].setPrio(por);
-     }*/
+
     public static void main(String[] args){
         int num=0;
         int timel=0;
