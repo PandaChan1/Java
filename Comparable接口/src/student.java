@@ -10,7 +10,10 @@
     }
     @Override
     public int compareTo(student o) {
-        if (this.age>o.age) return 1;
+        /*if (this.age>o.age) return 1;   //升序
+        else if (this.age==o.age) return 0;
+        else return -1;*/
+        if (this.age<o.age) return 1; //降序
         else if (this.age==o.age) return 0;
         else return -1;
     }
