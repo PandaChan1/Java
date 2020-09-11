@@ -17,19 +17,26 @@ public class Listlearn {
 }
 class Person{
     String firstName;
-    String LastName;
+    String lastName;
     int age;
-    public Person(String firstName,String LastName,int age){
+    public Person(String firstName,String lastName,int age){
         this.firstName=firstName;
-        this.LastName=LastName;
+        this.lastName=lastName;
         this.age=age;
     }
-    public boolean equals(Object o){
-        if(o instanceof Person){
-            Person p= (Person) o;
-            return Objects.equals(this.firstName,p.firstName)&&Objects.equals(this.LastName,p.LastName)&& this.age==p.age ;
-        }
-
-        return false;
+//    public boolean equals(Object o){
+//        if(o instanceof Person){
+//            Person p= (Person) o;
+//            return Objects.equals(this.firstName,p.firstName)&&Objects.equals(this.LastName,p.LastName)&& this.age==p.age ;
+//        }
+//
+//        return false;
+//    }
+public boolean equals(Object o){
+    if(o instanceof Person){
+        Person p=(Person)o;
+        return Objects.equals(this.firstName, p.firstName) && Objects.equals(this.lastName, p.lastName) && this.age == p.age;
     }
+    return false;
+}
 }
