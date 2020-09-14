@@ -1,9 +1,6 @@
 package TestPack;
 
-import SortAlg.BubbleSort;
-import SortAlg.InsertionSort;
-import SortAlg.myData;
-import SortAlg.selectionSort;
+import SortAlg.*;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Assert;
@@ -32,8 +29,10 @@ public class TestingDemo {
     public void testSortResult(){
 //       int[] result=BubbleSort.BubbleSort(myData.array);
 //        int[] result= selectionSort.selectionSort(myData.array);
-        int[] result= InsertionSort.insertionSort(myData.array);
-      Assert.assertArrayEquals(result,myData.array);
+//        int[] result= InsertionSort.insertionSort(myData.array);
+//        int[] result= ShellSort.shell(myData.array);
+          int[] result=MergeSort.Mergesort(myData.array);
+        Assert.assertArrayEquals(result,myData.array);
       System.out.println("测试结果为:");
         for (int i :
                 result) {
