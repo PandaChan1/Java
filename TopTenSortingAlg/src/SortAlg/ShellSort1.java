@@ -1,7 +1,7 @@
 package SortAlg;
 
-public class ShellSort {
-    public static int[] shellSort(int[] array){
+public class ShellSort1 {
+    public static int[] shellSort1(int[] array){
         int len=array.length;
         int temp,gap=len/2;
         while(gap>0){
@@ -14,7 +14,7 @@ public class ShellSort {
                 }
                 array[preIndex+gap]=temp;
             }
-            gap=len/2;
+            gap/=2;
         }
         return array;
     }
