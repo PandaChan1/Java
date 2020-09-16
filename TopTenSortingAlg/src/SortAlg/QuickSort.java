@@ -34,4 +34,30 @@ public class QuickSort {
         array[i]=array[j];
         array[j]=temp;
     }
+
+
+    public static int[] quick(int[] array,int left,int right){
+        int pivot=0;
+        if (left<right){
+            pivot=part(array,left,right);
+            quick(array,left,pivot-1);
+            quick(array,pivot+1,right);
+        }
+        return array;
+    }
+    public static int part(int[] array,int left,int right){
+        int key=array[left];
+        while(left<right){
+            while(left<right && array[right]>=key){
+                right--;
+            }
+            array[left]=array[right];
+            while(left<right&&array[left]<=key){
+                left++;
+            }
+            array[right]=array[left];
+        }
+        array[left]=key;
+        return left;
+    }
 }
