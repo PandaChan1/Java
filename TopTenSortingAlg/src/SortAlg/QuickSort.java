@@ -1,18 +1,18 @@
 package SortAlg;
 
 public class QuickSort {
-    public static int[] quick(int[] array,int left,int right){
+    public static int[] quickSort(int[] array, int left, int right){
         int pivot=0;
         if (left<right){
             //找基准
-            pivot=part(array,left,right);
+            pivot= partition(array,left,right);
             //递归
-            quick(array,left,pivot-1);
-            quick(array,pivot+1,right);
+            quickSort(array,left,pivot-1);
+            quickSort(array,pivot+1,right);
         }
         return array;
     }
-    public static int part(int[] array,int left,int right){
+    public static int partition(int[] array, int left, int right){
         //设置基准为左边的元素
         int key=array[left];
         /**

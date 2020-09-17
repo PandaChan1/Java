@@ -31,7 +31,7 @@ public class TestingDemo {
 //        int[] result= InsertionSort.insertionSort(myData.array);
 //        int[] result= ShellSort1.shellSort1(myData.array);
 //          int[] result=MergeSort.Mergesort(myData.array);
-        int[] result=QuickSort.quick(myData.array,0,myData.array.length-1);
+        int[] result=QuickSort.quickSort(myData.array,0,myData.array.length-1);
         Assert.assertArrayEquals(result,myData.result);
       System.out.println("测试结果为:");
         for (int i :
