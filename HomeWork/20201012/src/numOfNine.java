@@ -4,7 +4,8 @@ public class numOfNine {
         for (int i = 1;i <= 100;i++) {
           if (i/10 == 9){
               count+=1;
-          }else if (i%10 == 9){
+          }
+          if (i%10 == 9){
               count+=1;
           }
         }

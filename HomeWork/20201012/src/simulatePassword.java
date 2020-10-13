@@ -2,6 +2,10 @@ import Data.passwd;
 
 import java.util.Scanner;
 
+/**
+ * 模拟密码登录，三次错误就直接退出
+ * 密码正确输出提示并退出
+ */
 public class simulatePassword {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);

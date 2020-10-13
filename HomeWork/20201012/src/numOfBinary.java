@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * 求一个整数二进制表示种1的个数
+ */
 public class numOfBinary {
     public static void main(String[] args){
         Scanner sc =new Scanner(System.in);

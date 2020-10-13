@@ -1,3 +1,7 @@
+/**
+ *
+ * 输出1-100之间的素数
+ */
 public class primeNum {
     public static void main(String[] args) {
     for (int i = 1;i <= 100;i++) {

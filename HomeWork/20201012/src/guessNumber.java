@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * 猜数字游戏
+ * 随机生成数字
+ */
 public class guessNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

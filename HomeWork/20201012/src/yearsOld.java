@@ -12,7 +12,7 @@ public class yearsOld {
             System.out.println("青年");
         }else if (num > 28 && num < 56) {
             System.out.println("中年");
-        }else if (num > 56) {
+        }else {
             System.out.println("老年");
         }
     }

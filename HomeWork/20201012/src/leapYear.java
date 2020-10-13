@@ -1,3 +1,6 @@
+/**
+ *求1000-2000之间的闰年
+ */
 public class leapYear {
     public static void main(String[] arga) {
         for (int i = 1000;i <=2000;i++){
@@ -7,3 +10,7 @@ public class leapYear {
         }
     }
 }
+
+
+
+
