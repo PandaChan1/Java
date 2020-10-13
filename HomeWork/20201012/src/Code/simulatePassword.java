@@ -1,3 +1,5 @@
+package Code;
+
 import Data.passwd;
 
 import java.util.Scanner;
@@ -16,7 +18,7 @@ public class simulatePassword {
             String str=sc.next();
             if (!str.equals(passwd.PASSWORD)){
                 count--;
-                System.out.println("密码错误");
+                System.out.println("密码错误,剩余"+count+"次机会");
             }
             if (count > 0 && str.equals(passwd.PASSWORD)){
                 System.out.println("密码正确");

@@ -1,3 +1,5 @@
+package Code;
+
 public class sumOfFrac {
     public static void main(String[] args){
         double sum=0;
