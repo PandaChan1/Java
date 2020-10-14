@@ -2,7 +2,7 @@ package Code;
 
 import java.util.Scanner;
 
-public class maxNum {
+public class MaxNum {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入两个整数");
@@ -19,17 +19,20 @@ public class maxNum {
     }
 
     private static int maxTwoNum(int a, int b) {
-        if (a > b) {
-            return a;
-        }else {
-            return b;
-        }
+//        if (a > b) {
+//            return a;
+//        }else {
+//            return b;
+//        }
+
+        return   a > b ?  a : b ;
     }
     private static int maxThreeNum(int a, int b,int c) {
-       if (maxTwoNum(a,b) > c) {
-           return maxTwoNum(a,b);
-       }else {
-           return c;
-       }
+//       if (maxTwoNum(a,b) > c) {
+//           return maxTwoNum(a,b);
+//       }else {
+//           return c;
+//       }
+       return maxTwoNum(a,b) > c ? maxTwoNum(a,b) : c;
     }
 }

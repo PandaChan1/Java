@@ -12,6 +12,7 @@ public class GroupOfNumber {
             9,
             22,
             54,
+            29,
             9,
             8,
             7,
