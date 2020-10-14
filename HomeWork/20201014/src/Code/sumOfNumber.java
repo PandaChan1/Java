@@ -1,6 +1,14 @@
 package Code;
 
 import java.util.Scanner;
+/**
+ *@ClassName: sumOfNumber
+ *@Description 整数每一位的和
+ *@Author PandaChan1
+ *@Date 2020/10/14
+ *@Time 18:45
+ */
+
 
 public class sumOfNumber {
     public static void main(String[] args) {
