@@ -19,9 +19,15 @@ public class FrogJump {
         if (n == 0) {
             return;
         }
-        System.out.println(jump(n));
+        System.out.println(jump1(n));
     }
-
+    //n == 1 时  1
+    //n == 2 时  2
+    //n == 3 时  3
+    //n == 4 时  5
+    //n == 5 时  8
+    //斐波那契数列的项
+    //迭代
     private static int jump(int n) {
         if (n == 1 || n == 0) {
             return 1;
@@ -30,5 +36,24 @@ public class FrogJump {
             // 当n==0时，即上一步跳完之后剩余台阶为0，同样 return 1
             return jump(n -1 ) + jump(n - 2);
         }
+    }
+
+    //递归
+    private static int jump1(int n) {
+        int n1 = 1;
+        int n2 = 2;
+        int res = 0;
+        if (n == 1) {
+            return n1;
+        }
+        if (n == 2) {
+            return n2;
+        }
+        for (int i = 3;i <= n;i++) {
+            res = n1 + n2;
+            n1 = n2;
+            n2 = res;
+        }
+        return  res;
     }
 }
