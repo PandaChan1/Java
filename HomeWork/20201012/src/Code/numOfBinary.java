@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class numOfBinary {
     //方法三，n & (n-1) 就会减少一个1
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         Scanner scanner =new Scanner(System.in);
         System.out.println("请输入一个数");
         int num = scanner.nextInt();
@@ -28,21 +28,23 @@ public class numOfBinary {
 
 
     //方法二，方法一循环32次
-    //例如 7有三个1，然二方法一循环了32次，多余了29次
+    //例如 7有三个1，然而方法一循环了32次，多余了29次
     //多余的29次 都是0在和1进行 & 运算
-    public static void main3(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
         System.out.println("请输入一个数");
         int n = scanner.nextInt();
         scanner.close();
         int count = 0;
-        while((n & 1) != 0) {
-            count++;
-            n = n >>> 1;
-            // 右移 >> 和 无符号右移 >>>
-            //当输入-1时，负数二进制存储是补码 负数的补码是（不含符号位取反）取反加1
-            //-1 的补码是32个1， 进行& 运算时，右移补符号位1，会死循环
-            //为了避免死循环，使用 >>> 无符号右移 即右移之后 补0
+        while(n != 0) {
+            if ((n & 1) != 0) {
+                count++;
+            }
+                n = n >>> 1;
+                // 右移 >> 和 无符号右移 >>>
+                //当输入-1时，负数二进制存储是补码 负数的补码是（不含符号位取反）取反加1
+                //-1 的补码是32个1， 进行& 运算时，右移补符号位1，会死循环
+                //为了避免死循环，使用 >>> 无符号右移 即右移之后 补0
         }
         System.out.println(count);
     }
