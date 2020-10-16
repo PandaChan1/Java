@@ -31,11 +31,14 @@ public class FrogJump {
     private static int jump(int n) {
         if (n == 1 || n == 0) {
             return 1;
-        }else {
-            //思路：当n==1时，即上一步跳完后剩余台阶为1，只能跳一步，return 1
-            // 当n==0时，即上一步跳完之后剩余台阶为0，同样 return 1
-            return jump(n -1 ) + jump(n - 2);
         }
+        if (n == 2) {
+            return 2;
+        }
+            //思路：当n==1时，只能跳一步，return 1
+            // 当n==2时,两种跳法,return 2
+            return jump(n -1 ) + jump(n - 2);
+
     }
 
     //迭代
