@@ -18,7 +18,9 @@ public class FrogJump2 {
             int n = sc.nextInt();
             System.out.println(jump(n));
         }
+        System.out.println("普通跳台阶5");
         System.out.println(frogJump(5));
+        sc.close();
     }
 
     private static int jump(int n) {
