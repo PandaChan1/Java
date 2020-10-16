@@ -27,7 +27,7 @@ public class FrogJump {
     //n == 4 时  5
     //n == 5 时  8
     //斐波那契数列的项
-    //迭代
+    //递归
     private static int jump(int n) {
         if (n == 1 || n == 0) {
             return 1;
@@ -38,7 +38,7 @@ public class FrogJump {
         }
     }
 
-    //递归
+    //迭代
     private static int jump1(int n) {
         int n1 = 1;
         int n2 = 2;
