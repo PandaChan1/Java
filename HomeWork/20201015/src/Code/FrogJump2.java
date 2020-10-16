@@ -38,6 +38,7 @@ public class FrogJump2 {
         return res + 1;
     }
 
+    //普通跳台阶
     private static int frogJump(int n) {
         if (n == 1 || n == 0) {
             return n;
