@@ -19,7 +19,7 @@ public class FrogJump {
         if (n == 0) {
             return;
         }
-        System.out.println(jump1(n));
+        System.out.println(jump(n));
     }
     //n == 1 时  1
     //n == 2 时  2
@@ -29,7 +29,7 @@ public class FrogJump {
     //斐波那契数列的项
     //递归
     private static int jump(int n) {
-        if (n == 1 || n == 0) {
+        if (n == 1 ) {
             return 1;
         }
         if (n == 2) {

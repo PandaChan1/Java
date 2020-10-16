@@ -1,5 +1,6 @@
 package Code;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class TestDemo {
@@ -14,7 +15,6 @@ public class TestDemo {
         System.out.println(isSorted);
 
         System.out.println(binarySearch(array, 21));
-
 
         int[] src = new int[]{12,2,3,6,7,58,92,55,45,21,36};
         int[] dest = new int[src.length];
