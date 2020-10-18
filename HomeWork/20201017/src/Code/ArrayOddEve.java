@@ -10,7 +10,6 @@ import java.util.Arrays;
  *@Time 18:55
  */
 
-
 public class ArrayOddEve {
     public static void main(String[] args) {
         int[] array = new int[]{12,2,3,65,14,25,33,5,8,64,3};
