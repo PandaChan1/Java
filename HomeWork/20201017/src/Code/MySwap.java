@@ -3,6 +3,15 @@ package Code;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ *@ClassName: Swap
+ *@Description 交换两个变量的值，改变实参的值
+ *@Author PandaChan1
+ *@Date 2020/10/18
+ *@Time 18:56
+ */
+
+
 class Swap{
     public static void swap() {
         int temp = MySwap.a;

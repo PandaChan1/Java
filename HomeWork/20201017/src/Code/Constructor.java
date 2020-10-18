@@ -1,5 +1,14 @@
 package Code;
 
+/**
+ *@ClassName: Student
+ *@Description 定义类的构造方法,使用构造方法创建对象
+ *@Author PandaChan1
+ *@Date 2020/10/18
+ *@Time 18:56
+ */
+
+
 class Student {
     int age;
     String sex;

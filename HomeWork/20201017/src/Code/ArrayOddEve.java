@@ -2,6 +2,15 @@ package Code;
 
 import java.util.Arrays;
 
+/**
+ *@ClassName: ArrayOddEve
+ *@Description 数组奇数放后面
+ *@Author PandaChan1
+ *@Date 2020/10/18
+ *@Time 18:55
+ */
+
+
 public class ArrayOddEve {
     public static void main(String[] args) {
         int[] array = new int[]{12,2,3,65,14,25,33,5,8,64,3};

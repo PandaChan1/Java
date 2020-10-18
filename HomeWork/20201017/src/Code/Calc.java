@@ -2,6 +2,15 @@ package Code;
 
 import java.util.Scanner;
 
+/**
+ *@ClassName: Calculator
+ *@Description 四则运算计算器类
+ *@Author PandaChan1
+ *@Date 2020/10/18
+ *@Time 18:55
+ */
+
+
 class Calculator {
     //成员属性
     private int num1;
