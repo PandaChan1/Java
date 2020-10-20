@@ -100,10 +100,10 @@ public class MySingleList {
         return false;
     }
 
-    //清空单链表
-    public void clear() {
-    this.head = null;
-    }
+//    //清空单链表
+//    public void clear() {
+//    this.head = null;
+//    }
 
     //返回单链表的长度
     public int size() {
