@@ -118,10 +118,13 @@ public class MyArrayList {
 
     //删除顺序表中所有的该元素
     public void removeAll(int toRemove) {
-        for (int i = 0; i < this.usedSize; i++) {
+      /*  for (int i = 0; i < this.usedSize; i++) {
             if (this.contains(toRemove)) {
                 remove(toRemove);
             }
+        }*/
+        while(this.contains(toRemove)) {
+            remove(toRemove);
         }
     }
 

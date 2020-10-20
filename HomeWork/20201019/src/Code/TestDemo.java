@@ -19,9 +19,9 @@ public class TestDemo {
         System.out.println(myArrayList.contains(2));
         System.out.println(myArrayList.search(2));
         System.out.println("删除");
-//        myArrayList.remove(3);
-//        myArrayList.display();
-        myArrayList.removeAll(999);
+        myArrayList.remove(999);
+        myArrayList.display();
+        myArrayList.removeAll(2);
         myArrayList.display();
     }
 }
