@@ -27,7 +27,7 @@ public class MySingleList {
         Node node = new Node(data);
         if (this.head == null) {  //第一次插入时
         }else {
-            node.next = head;
+            node.next = this.head;
         }
         this.head = node;
 

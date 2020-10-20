@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7d8681b-9557-4452-9206-82f43d166c41" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/20201020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Code/MySingleList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Code/TestDemo.java" afterDir="false" />
+    <list default="true" id="c7d8681b-9557-4452-9206-82f43d166c41" name="Default Changelist" comment="实现单链表--PM">
+      <change afterPath="$PROJECT_DIR$/src/Code/HomeWorkList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Code/HomeWorkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Code/MySingleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Code/MySingleList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,20 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HomeWorkTest">
+    <configuration name="HomeWorkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Code.HomeWorkTest" />
+      <module name="20201020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Code.TestDemo" />
       <module name="20201020" />
@@ -60,6 +70,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HomeWorkTest" />
         <item itemvalue="Application.TestDemo" />
       </list>
     </recent_temporary>
@@ -74,29 +85,74 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603188800787</updated>
-      <workItem from="1603188803197" duration="7373000" />
+      <workItem from="1603188803197" duration="7646000" />
+      <workItem from="1603196900046" duration="4024000" />
     </task>
+    <task id="LOCAL-00001" summary="实现单链表">
+      <created>1603196632161</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603196632161</updated>
+    </task>
+    <task id="LOCAL-00002" summary="实现单链表--PM">
+      <created>1603196756964</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603196756964</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="实现单链表" />
+    <MESSAGE value="实现单链表--PM" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现单链表--PM" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1518" height="249" key="GridCell.Tab.0.bottom" timestamp="1603196424228">
+    <state x="544" y="68" key="CommitChangelistDialog2" timestamp="1603196760385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603196424228" />
-    <state width="1518" height="249" key="GridCell.Tab.0.center" timestamp="1603196424228">
+    <state x="544" y="68" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603196760385" />
+    <state width="1518" height="308" key="GridCell.Tab.0.bottom" timestamp="1603200291118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603196424228" />
-    <state width="1518" height="249" key="GridCell.Tab.0.left" timestamp="1603196424228">
+    <state width="1518" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.0.center" timestamp="1603200291118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603196424228" />
-    <state width="1518" height="249" key="GridCell.Tab.0.right" timestamp="1603196424228">
+    <state width="1518" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.0.left" timestamp="1603200291118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603196424228" />
+    <state width="1518" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.0.right" timestamp="1603200291118">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1518" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.1.bottom" timestamp="1603200291118">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1518" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.1.center" timestamp="1603200291118">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1518" height="308" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.1.left" timestamp="1603200291118">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1518" height="308" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state width="1518" height="308" key="GridCell.Tab.1.right" timestamp="1603200291118">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1518" height="308" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603200291118" />
+    <state x="546" y="218" key="Vcs.Push.Dialog.v2" timestamp="1603196771737">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="546" y="218" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603196771737" />
   </component>
 </project>
