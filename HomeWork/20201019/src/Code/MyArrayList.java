@@ -1,5 +1,7 @@
 package Code;
 
+import java.util.Arrays;
+
 /**
  *@ClassName: MyArrayList
  *@Description 实现ArrayList顺序表结构
@@ -15,7 +17,7 @@ public class MyArrayList {
 
     //构造函数
     public MyArrayList() {
-        this.elem = new int[10];
+        this.elem = new int[5];
         this.usedSize = 0;
     }
 
@@ -33,11 +35,11 @@ public class MyArrayList {
             return;
         }
         //elem[]存满的时候，不能再插入
-        if (this.usedSize == this.elem.length) {
-            System.out.println("顺序表满了");
-            return;
+        if (isFull()) {
+            //System.out.println("顺序表满了");
+            reSize();
+//            return;
         }
-
         //向后移
         for (int i = this.usedSize; i > pos ; i--) { //i > pos ，因为当i在pos+1时，已经将pos的值后移了
                 this.elem[i] = this.elem[i - 1]; //后移
@@ -46,6 +48,27 @@ public class MyArrayList {
         this.usedSize++; //每次成功插入一个元素都要++
     }
 
+    //判断顺序表是否存满
+    public boolean isFull() {
+        if (this.elem.length == this.usedSize) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+    //顺序表扩容
+    public void reSize() {
+        if (isFull()) {
+//            int[] copy = new int[this.elem.length * 2];
+//            System.arraycopy(this.elem,0,copy,0,this.usedSize);
+//            this.elem = copy;
+            this.elem = Arrays.copyOf(this.elem, this.elem.length * 2);
+        }else {
+            return;
+        }
+    }
 
     //打印顺序表
     public void display() {
