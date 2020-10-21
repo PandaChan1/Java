@@ -100,10 +100,10 @@ public class MySingleList {
         return false;
     }
 
-//    //清空单链表
-//    public void clear() {
-//    this.head = null;
-//    }
+    //清空单链表
+    public void clear() {
+    this.head = null;
+    }
 
     //返回单链表的长度
     public int size() {
@@ -148,9 +148,25 @@ public class MySingleList {
 
     //移除单链表中所有的该元素
     public void removeAllKey(int key) {
-        while (contains(key)) {
-            remove(key);
-        }
-    }
+//        while (contains(key)) {
+//            remove(key);
+//        }
 
+            Node cur = this.head.next;
+            Node prev = this.head;
+
+            while (cur != null) {
+                if (cur.data == key) {
+                    prev.next = cur.next;
+//                cur = cur.next;
+                } else {
+                    prev = cur;
+//                cur = cur.next;
+                }
+                cur = cur.next;
+            }
+
+            if(this.head.data == key)
+                this.head = this.head.next;
+        }
 }

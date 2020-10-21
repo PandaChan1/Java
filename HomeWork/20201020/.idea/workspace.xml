@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7d8681b-9557-4452-9206-82f43d166c41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../20201021/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20201021/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20201021/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20201021/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20201021/20201021.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Code/HomeWorkList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Code/HomeWorkList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Code/HomeWorkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Code/HomeWorkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Code/MySingleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Code/MySingleList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,17 +27,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1j8bjQ7x9pgRyO3A481cvzTCZrG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -86,7 +95,8 @@
       <updated>1603188800787</updated>
       <workItem from="1603188803197" duration="7646000" />
       <workItem from="1603196900046" duration="5104000" />
-      <workItem from="1603240503091" duration="660000" />
+      <workItem from="1603240503091" duration="1853000" />
+      <workItem from="1603243311226" duration="3107000" />
     </task>
     <task id="LOCAL-00001" summary="实现单链表">
       <created>1603196632161</created>
@@ -109,38 +119,47 @@
       <option name="project" value="LOCAL" />
       <updated>1603201936683</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="20201021--AM，HomeWorkList改">
+      <created>1603241366693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603241366693</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="实现单链表" />
     <MESSAGE value="实现单链表--PM" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现单链表--PM" />
+    <MESSAGE value="20201021--AM，HomeWorkList改" />
+    <option name="LAST_COMMIT_MESSAGE" value="20201021--AM，HomeWorkList改" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="544" y="68" key="CommitChangelistDialog2" timestamp="1603201935375">
+    <state x="544" y="68" key="CommitChangelistDialog2" timestamp="1603241364670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="544" y="68" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603201935375" />
-    <state width="1518" height="249" key="GridCell.Tab.0.bottom" timestamp="1603241172758">
+    <state x="544" y="68" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603241364670" />
+    <state width="1518" height="249" key="GridCell.Tab.0.bottom" timestamp="1603244409416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603241172758" />
-    <state width="1518" height="249" key="GridCell.Tab.0.center" timestamp="1603241172758">
+    <state width="1518" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603244409416" />
+    <state width="1518" height="249" key="GridCell.Tab.0.center" timestamp="1603244409416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603241172758" />
-    <state width="1518" height="249" key="GridCell.Tab.0.left" timestamp="1603241172758">
+    <state width="1518" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603244409416" />
+    <state width="1518" height="249" key="GridCell.Tab.0.left" timestamp="1603244409416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603241172758" />
-    <state width="1518" height="249" key="GridCell.Tab.0.right" timestamp="1603241172758">
+    <state width="1518" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603244409416" />
+    <state width="1518" height="249" key="GridCell.Tab.0.right" timestamp="1603244409416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1518" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603241172758" />
+    <state width="1518" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603244409416" />
     <state width="1518" height="308" key="GridCell.Tab.1.bottom" timestamp="1603206071568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,5 +180,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="546" y="218" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603202389027" />
+    <state x="545" y="95" key="new project wizard" timestamp="1603241395981">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="545" y="95" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1603241395981" />
   </component>
 </project>
