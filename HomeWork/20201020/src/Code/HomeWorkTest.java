@@ -12,17 +12,21 @@ public class HomeWorkTest {
         homeWorkList.addLsat(7);
         homeWorkList.addLsat(9);
         homeWorkList.display();
-        homeWorkList.addIndex(0,12);
-        homeWorkList.addIndex(3,12);
-        homeWorkList.addIndex(7,12);
-        homeWorkList.display();
-        System.out.println(homeWorkList.contains(6));
-        System.out.println(homeWorkList.contains(99));
-        System.out.println(homeWorkList.size());
+//        homeWorkList.addIndex(0,12);
+//        homeWorkList.addIndex(3,12);
+//        homeWorkList.addIndex(7,12);
+//        homeWorkList.display();
+//        System.out.println(homeWorkList.contains(6));
+//        System.out.println(homeWorkList.contains(99));
+//        System.out.println(homeWorkList.size());
 
 //        homeWorkList.remove(3);
+//
+//        homeWorkList.removeAllKey(3);
+//        System.out.println(homeWorkList.middleNode().data);
+//        homeWorkList.display(homeWorkList.reserve());
 
-        homeWorkList.removeAllKey(3);
-        homeWorkList.display();
+        System.out.println(homeWorkList.findKthNode(3).data);
+//        homeWorkList.display();
     }
 }

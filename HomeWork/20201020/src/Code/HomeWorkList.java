@@ -144,4 +144,68 @@ public class HomeWorkList {
         }
         System.out.println();
     }
+
+    //找到中间节点，有两个中间节点返回第二个
+    public myNode middleNode() {
+        myNode fast = this.head;
+        myNode last = this.head;
+
+        while (fast != null && fast.next != null) {
+         fast = fast.next.next;
+         last = last.next;
+        }
+        return last;
+    }
+    //反转链表
+    public myNode reserve() {
+        myNode prev = null;
+        myNode cur = this.head;
+        while (cur != null) {
+            myNode next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+        return prev;
+    }
+
+    public void display(myNode head) {
+        while(head != null) {
+            System.out.print(head.data + "  ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+    //找到倒数第k个节点
+    public myNode findKthNode (int k) {
+//        if (k <= 0 || k > size()) {
+//            return null;
+//        }
+        if (k <= 0) {
+            return null;
+        }
+        myNode fast = this.head;
+        myNode last = this.head;
+
+//        //先走k-1次
+//            for (int i = 0; i < k - 1; i++) {
+//                fast = fast.next;
+//            }
+        while(k - 1 > 0 ) {
+            if (fast.next != null) {
+             fast = fast.next;
+             k--;
+            }else {
+                System.out.println("没有这个节点");
+                return null;
+            }
+        }
+
+            while (fast.next != null) {
+                fast = fast.next;
+                last = last.next;
+            }
+        return last;
+    }
 }
