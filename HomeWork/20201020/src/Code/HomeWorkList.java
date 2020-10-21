@@ -85,12 +85,13 @@ public class HomeWorkList {
             if (cur.next.data == key) {
                 return cur;
             }
+            cur = cur.next;
         }
         return null;
     }
     //删除第一次出现的关键字
     public void remove(int key) {
-        if (this.head.data ==  key) {
+        if (this.head.data ==  key) {  //删除头节点
             this.head = this.head.next;
             return;
         }
@@ -107,7 +108,6 @@ public class HomeWorkList {
         while(contains(key)) {
             remove(key);
         }
-
     }
     //打印所有节点
     public void display() {
@@ -116,5 +116,6 @@ public class HomeWorkList {
             System.out.print(cur.data + "  ");
             cur = cur.next;
         }
+        System.out.println();
     }
 }
