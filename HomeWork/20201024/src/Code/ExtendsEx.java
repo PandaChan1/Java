@@ -8,12 +8,50 @@ package Code;
  */
 
 class Animal{
-    public String name;
+    protected String name;
+    public Animal(String name ) {
+        this.name = name;
+    }
     public void eat(){
         System.out.println("吃东西");
     }
 }
+class Cat extends Animal{
+    public Cat(String name) {
+        super(name);
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("cat::eat()");
+    }
+}
+class Bird extends Animal{
+    public Bird(String name) {
+        super(name);
+    }
+    @Override
+    public void eat() {
+        System.out.println("bird::eat()");
+    }
+    public void fly(){
+        System.out.println(this.name+"fly()");
+    }
+}
 
 public class ExtendsEx {
+    public static Animal whatAnimal(Cat cat) {
+        return cat;
+    }
+    public static void main(String[] args) {
+        Cat cat = new Cat("咪咪");
+        whatAnimal(cat).eat();
 
+        cat.eat();
+        Bird bird =new Bird("小鸟");
+        bird.eat();
+        bird.fly();
+        Animal animal = new Cat("咪咪");
+        animal.eat();
+    }
 }
