@@ -23,13 +23,13 @@ public class NormalUser extends User{
 
     @Override
     public Operation doOperation(int choice) {
-        this.operations = new Operation[]{
+        this.operations = new Operation[]{  //重写doOperation()方法，存入该用户所拥有的功能的对象
                 new Exit(),
                 new Find(),
                 new Borrow(),
                 new Return(),
 
         };
-       return this.operations[choice];
+       return this.operations[choice];  //调用
     }
 }
