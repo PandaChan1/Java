@@ -7,11 +7,12 @@ public class BookList {
     public BookList() {
         this.elem[0] = new Book("三国演义","罗贯中",25.6,"小说");
         this.elem[1] = new Book("西游记","吴承恩",33.0,"小说");
-        this.elem[2] = new Book("Java","Orac",51,"教育");
+        this.elem[2] = new Book("Java","Oracl",51,"教育");
         this.usedSize = 3;
     }
 
-    public int getUsedSize() {
+
+    public int getUsedSize() {  //获取书架大小
         return usedSize;
     }
 
@@ -19,12 +20,12 @@ public class BookList {
         this.usedSize = usedSize;
     }
 
-    public Book getBook(String name) {
-        return null;
+    public Book getBook( int pos) {
+        return this.elem[pos];
     }
-    public void setBook(Book book) {
-
+    public void setBook(int pos,Book book) {
+        this.elem[pos] = book;
+        this.usedSize++;
     }
-
 
 }

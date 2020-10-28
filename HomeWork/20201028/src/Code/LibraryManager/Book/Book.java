@@ -61,7 +61,7 @@ private boolean  isBooked; //是否借出
                 ", author='" + author + '\'' +
                 ", price=" + price +
                 ", type='" + type + '\'' +
-                ", isBooked=" + isBooked +
+                (isBooked ? ", 已借出":", 未借出") +
                 '}';
     }
 }
