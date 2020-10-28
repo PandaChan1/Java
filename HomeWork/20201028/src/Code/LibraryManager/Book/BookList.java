@@ -1,7 +1,7 @@
 package Code.LibraryManager.Book;
 
 public class BookList {
-    private Book[] elem = new Book[10];
+    private Book[] elem = new Book[10];  //顺序表
     private int usedSize;
 
     public BookList() {

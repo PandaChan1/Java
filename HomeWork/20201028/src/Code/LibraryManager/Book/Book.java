@@ -55,7 +55,7 @@ private boolean  isBooked; //是否借出
     }
 
     @Override
-    public String toString() {
+    public String toString() {   //重写toString()方法
         return "Book{" +
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +

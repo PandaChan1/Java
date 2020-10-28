@@ -16,20 +16,18 @@ public class Library {
         System.out.println("请输入你的身份：1->管理员  0->普通用户");
         int id = scanner.nextInt();
         if (id == 1) {
-            return new Admin(name);
+            return new Admin(name);  //按照输入创建不同的对象
         } else {
             return new NormalUser(name);
         }
     }
 
     public static void main(String[] args) {
-        StringBuilder str = new StringBuilder("111");
-        str.append("dada");
         BookList bookList = new BookList();
-        User user = logIn();
+        User user = logIn();  //接收对象
         System.out.println("hello " + user.getName() + " 欢迎你来到图书管理系统!");
         while (true) {
-            int choice = user.menu();
+            int choice = user.menu();  //动态绑定
             Operation operation = user.doOperation(choice);
             operation.work(bookList);
         }
