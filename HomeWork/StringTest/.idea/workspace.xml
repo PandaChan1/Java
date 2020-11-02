@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b14d9a3-b516-4fce-9d52-d0d4e52d57f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StringTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +35,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RunManager">
     <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -70,8 +68,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603960873336</updated>
-      <workItem from="1603960876310" duration="4154000" />
+      <workItem from="1603960876310" duration="4182000" />
+      <workItem from="1603977468370" duration="1035000" />
+      <workItem from="1604062208672" duration="24000" />
+      <workItem from="1604105293378" duration="9000" />
+      <workItem from="1604278108623" duration="868000" />
     </task>
+    <task id="LOCAL-00001" summary="牛客">
+      <created>1603966143333</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603966143333</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,23 +89,48 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="牛客" />
+    <option name="LAST_COMMIT_MESSAGE" value="牛客" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1517" height="249" key="GridCell.Tab.0.bottom" timestamp="1603963032892">
+    <state x="637" y="102" key="CommitChangelistDialog2" timestamp="1603966141589">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1517" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603963032892" />
-    <state width="1517" height="249" key="GridCell.Tab.0.center" timestamp="1603963032892">
+    <state x="637" y="102" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603966141589" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604278960813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1517" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603963032892" />
-    <state width="1517" height="249" key="GridCell.Tab.0.left" timestamp="1603963032892">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604278960813" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1603978510413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1517" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603963032892" />
-    <state width="1517" height="249" key="GridCell.Tab.0.right" timestamp="1603963032892">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603978510413" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1603978510413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1517" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603963032892" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603978510413" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1603978510413">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603978510413" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1603978510413">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603978510413" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1603978351825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603978351825" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604062231110">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604062231110" />
+    <state x="611" y="115" key="new project wizard" timestamp="1604278978200">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="611" y="115" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1604278978200" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/StringTest$StringTest.ic" NAME="StringTest Coverage Results" MODIFIED="1603978059537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
