@@ -20,7 +20,6 @@ public class TestDemo {
         list.add(new Student("小李","大三",98.0));
         list.add(new Student("小马","大一",88));
 
-
         for (Student s :
                 list) {
             System.out.println(s.name + " " + s.grade + " " + s.score);
@@ -39,6 +38,7 @@ public class TestDemo {
         change("welcome to bit", "come");
     }
 
+    //删除字符串中所有和给定字符串重复的字符
     private static void change(String str1,String str2) {
         List<Character> list = new ArrayList<>();
         for (int i = 0; i < str1.length(); i++) {
