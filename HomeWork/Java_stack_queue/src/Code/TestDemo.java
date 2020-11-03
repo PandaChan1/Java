@@ -41,8 +41,53 @@ public class TestDemo {
         return ex.pop();
     }
 
+    public static boolean backspaceCompare(String S, String T) {
+        Stack<Character> stack1 = new Stack<>();
+        Stack<Character> stack2 = new Stack<>();
+        for(int i = 0;i < S.length();i++) {
+            if(S.charAt(i) == '#') {
+                if(!stack1.isEmpty()) {
+                    stack1.pop();
+                }
+            }else {
+                stack1.push(S.charAt(i));
+            }
+
+        }
+
+        for(int i = 0;i < T.length();i++) {
+            if(T.charAt(i) == '#') {
+                if(!stack2.isEmpty()){
+                    stack2.pop();
+                }
+            }else {
+                stack2.push(T.charAt(i));
+            }
+
+        }
+
+        StringBuilder sb1 = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
+
+        for(char c : stack1) {
+            sb1.append(c);
+        }
+
+        for(char c : stack2) {
+            sb2.append(c);
+        }
+
+        if(sb1.equals(sb2)) {
+            return true;
+        }else {
+            return false;
+        }
+    }
     public static void main(String[] args) {
-        String[] str = {"4","13","5","/","+"};
-        System.out.println(evalRPN(str));
+//        String[] str = {"4","13","5","/","+"};
+//        System.out.println(evalRPN(str));
+        String str1 = "ad#c";
+        String str2 = "ab#c";
+        System.out.println(backspaceCompare(str1, str2));
     }
 }
