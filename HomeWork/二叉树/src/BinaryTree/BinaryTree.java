@@ -1,0 +1,119 @@
+package BinaryTree;
+
+/**
+ *@ClassName: BinaryTree
+ *@Description 二叉树
+ *@Author PandaChan1
+ *@Date 2020/11/5
+ *@Time 10:41
+ */
+
+class Node{
+    public char val;
+    public Node left;
+    public Node right;
+    public Node(char value) {
+        this.val = value;
+    }
+}
+public class BinaryTree {
+    public  Node createTree() {
+        Node A = new Node('A');
+        Node B = new Node('B');
+        Node C = new Node('C');
+        Node D = new Node('D');
+        Node E = new Node('E');
+        Node F = new Node('F');
+        Node G = new Node('G');
+        Node H = new Node('H');
+        A.left = B;
+        A.right = C;
+        B.left = D;
+        B.right = E;
+        E.right = H;
+        C.left = F;
+        C.right = G;
+        return A;
+    }
+    //前序遍历
+    void preOrderTraversal(Node root) {
+     if (root == null) return;
+        System.out.print(root.val + " ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+
+    //中序遍历
+    void inOrderTraversal(Node root) {
+        if (root == null) return;
+        inOrderTraversal(root.left);
+        System.out.print(root.val + " ");
+        inOrderTraversal(root.right);
+    }
+
+    //后续遍历
+    void postOrderTraversal(Node root) {
+        if (root == null) return;
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.val + " ");
+    }
+
+    //子问题思路---化解为子问题递归
+    int getSize(Node root) {  //递归，节点为空返回0，不为空 +1
+        //求root.size = root.left.size + root.right.size;
+        if (root == null) {
+            return 0;
+        }
+        return 1 + getSize(root.left) + getSize(root.right);
+    }
+
+
+    //遍历求size
+    static int size = 0;
+    void size(Node root) {
+        if (root == null) return;
+        size++;  //不为空
+        size(root.left);
+        size(root.right);
+    }
+
+    //求二叉树叶子数---递归思路
+    //root的叶子数，为左子树叶子数加右子树叶子数
+    //当root为空时叶子数为0
+    //当root的左右都为空时，该root节点为叶子节点
+    int getLeafSize(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        if(root.right == null && root.left == null) {
+            return 1;
+        }
+        return getLeafSize(root.right) + getLeafSize(root.left);
+    }
+
+    //求叶子数---遍历思路
+    //是叶子则leaves++
+    static int leaves = 0;
+    void getLeaf(Node root) {
+        if (root == null) {
+            return;
+        }
+        if(root.left == null && root.right == null) {
+            leaves++;
+        }
+        getLeaf(root.left);
+        getLeaf(root.right);
+    }
+
+    //子问题思路----求第k层节点数
+    int getKLeef(Node root,int k) {
+        if (root == null) {
+            return 0;
+        }
+        if (k == 1) {
+            return 1;
+        }
+        return getKLeef(root.left,k - 1) + getKLeef(root.right, k - 1);
+    }
+}
