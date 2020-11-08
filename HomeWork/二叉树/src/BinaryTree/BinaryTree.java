@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  *@ClassName: BinaryTree
  *@Description 二叉树
@@ -115,5 +118,57 @@ public class BinaryTree {
             return 1;
         }
         return getKLeef(root.left,k - 1) + getKLeef(root.right, k - 1);
+    }
+
+    //获取二叉树的高度
+    int height(Node root) {
+        if (root == null) return  0;
+        return Math.max(height(root.left),height(root.right)) + 1;
+    }
+
+    //寻找val所在的节点
+    Node find(Node root,char val) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == val) {
+            return root;
+        }
+        Node resleft = find(root.left,val);
+        Node resright = find(root.right,val);
+        if (resleft != null) {
+            return resleft;
+        }else {
+            return resright;
+        }
+    }
+
+    //层序遍历
+    void levelOrderTraversal(Node root) {
+        if (root == null) return;
+//        System.out.println(root.val);
+//        if (root.left != null) {
+//            levelOrderTraversal(root.left);
+//        }
+//        if (root.right != null) {
+//             levelOrderTraversal(root.left);
+//        }
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.offer(root);
+
+
+        while(!queue.isEmpty()) {
+            Node cur;
+            cur = queue.poll();
+            System.out.print(cur.val + " ");
+            if (cur.left != null) {
+                queue.offer(cur.left);
+            }
+
+            if(cur.right != null) {
+                queue.offer(cur.right);
+            }
+
+        }
     }
 }
