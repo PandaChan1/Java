@@ -54,7 +54,7 @@ public class BinaryTree {
         inOrderTraversal(root.right);
     }
 
-    //后续遍历
+    //后序遍历
     void postOrderTraversal(Node root) {
         if (root == null) return;
         postOrderTraversal(root.left);
@@ -146,13 +146,7 @@ public class BinaryTree {
     //层序遍历
     void levelOrderTraversal(Node root) {
         if (root == null) return;
-//        System.out.println(root.val);
-//        if (root.left != null) {
-//            levelOrderTraversal(root.left);
-//        }
-//        if (root.right != null) {
-//             levelOrderTraversal(root.left);
-//        }
+
         Queue<Node> queue = new LinkedList<Node>();
         queue.offer(root);
 
@@ -168,7 +162,27 @@ public class BinaryTree {
             if(cur.right != null) {
                 queue.offer(cur.right);
             }
-
         }
+    }
+
+    //判断完全二叉树
+    boolean isCompleteTree(Node root) {
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            Node cur = queue.poll();
+            if(cur == null) {
+                break;
+            }
+            queue.offer(cur.left);
+            queue.offer(cur.right);
+        }
+        for (Node n :
+                queue) {
+            if (n != null) {
+                return false;
+            }
+        }
+        return true;
     }
 }

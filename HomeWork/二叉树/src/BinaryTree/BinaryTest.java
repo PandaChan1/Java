@@ -28,7 +28,11 @@ public class BinaryTest {
             e.printStackTrace();
         }
 
+        System.out.println("层序遍历");
         tree.levelOrderTraversal(root);
+        System.out.println();
+        System.out.println("判断完全二叉树");
+        System.out.println(tree.isCompleteTree(root));
 
     }
 }
