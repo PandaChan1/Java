@@ -2,6 +2,7 @@ package BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  *@ClassName: BinaryTree
@@ -60,6 +61,71 @@ public class BinaryTree {
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
         System.out.print(root.val + " ");
+    }
+
+    //前序非递归
+    void preorderTraversalNor(Node root) {
+        if (root == null) {
+            return;
+        }
+        Stack<Node> stack = new Stack<Node>();
+        Node cur = root;
+
+        while(cur != null || !stack.isEmpty()) {  //cur为空时，栈中还有元素就可以pop
+            while(cur != null) {
+                stack.push(cur);
+                System.out.print(cur.val +  " " );
+                cur = cur.left;
+            }
+
+            Node top = stack.pop();
+            cur = top.right;  //cur可能为空
+        }
+    }
+
+    //中序非递归
+    void inorderTraversalNor(Node root) {
+    if(root == null) {
+        return ;
+    }
+    Stack<Node> stack = new Stack<Node>();
+    Node cur = root;
+    while(cur != null || !stack.isEmpty()) {
+        while(cur != null) {
+            stack.push(cur);
+            cur = cur.left;
+        }
+        Node top =  stack.pop();
+        System.out.print(top.val + " ");
+        cur = top.right;
+    }
+
+    }
+    //后序非递归
+    void postorderTraversalNor(Node root) {
+        if (root == null) return;
+        Stack<Node> stack = new Stack<Node>();
+        Node cur = root;
+        Node prev = null;
+        while(cur != null || !stack.isEmpty()) {
+
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+
+            cur = stack.peek();
+
+            if (cur.right == null || cur.right == prev) {
+                stack.pop();
+                System.out.print(cur.val + " ");
+                prev = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+
     }
 
     //子问题思路---化解为子问题递归
