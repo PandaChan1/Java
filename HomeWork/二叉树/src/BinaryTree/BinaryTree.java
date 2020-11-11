@@ -34,9 +34,9 @@ public class BinaryTree {
         A.right = C;
         B.left = D;
         B.right = E;
-        E.right = H;
+//        E.right = H;
         C.left = F;
-        C.right = G;
+//        C.right = G;
         return A;
     }
     //前序遍历
