@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTest {
+    //前中序重建二叉树
     public static Node reCreateTreeWithPreAndIn(char[] pre,char[] in) {
     if (pre.length == 0 || in.length == 0) return null;
     Node root = new Node(pre[0]);
@@ -16,6 +17,7 @@ public class BinaryTest {
         }
         return root;
     }
+    //中后序重建二叉树
     public static Node reCreateTreeWitchInAndPost(char[] post,char[] in) {
         if (post.length == 0 || in.length == 0) return null;
         Node root = new Node(post[post.length - 1]);
@@ -27,6 +29,7 @@ public class BinaryTest {
         }
         return root;
     }
+    //层序重建二叉树
 public static Node reCreateTreeWithLevel(Character[] level) {
         if (level.length == 0) return null;
         Node root = new Node(level[0]);
@@ -75,10 +78,10 @@ public static Node reCreateTreeWithLevel(Character[] level) {
 //        tree.postOrderTraversal(root);
 //        System.out.println();
 //        tree.postorderTraversalNor(root);
-//        System.out.println("重建树");
+//        System.out.println("前中序重建树");
 //        Node node = reCreateTreeWithPreAndIn(new char[]{'A', 'B', 'D', 'E', 'C', 'F'}, new char[]{'D', 'B', 'E', 'A', 'F', 'C'});
 //        tree.preOrderTraversal(node);
-//        System.out.println("重建树");
+//        System.out.println("中后序重建树");
 //        Node node1 = reCreateTreeWitchInAndPost(new char[]{'D','E','B','F','C','A'},new char[]{'D', 'B', 'E', 'A', 'F', 'C'});
 //        tree.preOrderTraversal(node1);
 //        System.out.println();
@@ -99,7 +102,7 @@ public static Node reCreateTreeWithLevel(Character[] level) {
 //        }catch (NullPointerException e) {
 //            e.printStackTrace();
 //        }
-        System.out.println("重建树");
+        System.out.println("层序重建树");
         Node node2 = reCreateTreeWithLevel(new Character[]{'A', 'B', 'C', 'D', 'E', 'F',null});
         tree.levelOrderTraversal(node2);
 //        System.out.println("层序遍历");
