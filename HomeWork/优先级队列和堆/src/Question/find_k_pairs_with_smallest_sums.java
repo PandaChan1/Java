@@ -38,9 +38,6 @@ public class find_k_pairs_with_smallest_sums {
         }
             return res;
         }
-        public static void main(String[] args) {
-
-    }
     }
 
 
