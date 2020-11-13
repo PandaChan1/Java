@@ -1,6 +1,7 @@
 package PriorityQueueDemo;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class PriorityQueueTest {
     //向下调整，每次都是从最后一个节点的父节点开始调整
@@ -71,6 +72,17 @@ public class PriorityQueueTest {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(new int[]{25,7,12,3,83,31}));
         createHeap(new int[] {25,7,12,3,83,31});
+        System.out.println("heap排序");
         heapSort(new int[] {25,7,12,3,83,31});
+
+        //
+        System.out.println("===================");
+        int[] array = new int[]{25,7,12,3,83,31};
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        for (Integer i :
+                array) {
+            priorityQueue.offer(i);
+        }
+        System.out.println(priorityQueue);
     }
 }
