@@ -55,8 +55,22 @@ public class PriorityQueueTest {
         System.out.println(Arrays.toString(array));
     }
 
+    public static void heapSort(int[] array) {
+        if (array.length == 0) return;
+        createHeap(array);
+        int len = array.length - 1;
+        while(len > 0) {
+                int temp = array[0];
+                array[0] = array[len];
+                array[len] = temp;
+                adjustDown(array,0,len);
+                len--;
+        }
+        System.out.println(Arrays.toString(array));
+    }
     public static void main(String[] args) {
         System.out.println(Arrays.toString(new int[]{25,7,12,3,83,31}));
         createHeap(new int[] {25,7,12,3,83,31});
+        heapSort(new int[] {25,7,12,3,83,31});
     }
 }
