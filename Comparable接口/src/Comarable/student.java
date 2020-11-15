@@ -18,7 +18,7 @@ class student implements Comparable<student>{
 //        if (this.age<o.age) return 1; //降序
 //        else if (this.age==o.age) return 0;
 //        else return -1;
-        return o.age - this.age;
+        return this.age - o.age;
     }
     public String toString(){
         return this.name+","+this.age+","+this.sex+","+this.phone;
