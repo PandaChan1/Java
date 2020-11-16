@@ -128,6 +128,7 @@ class BSTree{
                     pre.right = newNode;
                 }
             }
+            //删除后新的替补节点的左树就是原来节点的左树
             newNode.left = current.left;
             return true;
         }
@@ -136,19 +137,19 @@ class BSTree{
 
     private Node getNewNode(Node del) {
         Node parent = del;
-        Node find = del;
-        Node cur = del.right;
+        Node find = del;  //标记删除的节点中序遍历结果的后一个节点的位置
+        Node cur = del.right;  //删除的节点有左右子树，删除该节点后替补节为中序遍历结果中该节点的后一个节点
         while(cur != null) {
             parent = find;
             find = cur;
-            cur = cur.left;
+            cur = cur.left;  //替补节点在删除节点的右子树的左孩子中
         }
         //此时cur为空
-        if (del.right != find) {  //如果要删除的节点右子树有左子
+        if (del.right != find) {  //如果要删除的节点右子树有左孩子
             parent.left = find.right;
             find.right = del.right;
         }
-        return find;
+        return find;  //找到节点的位置
     }
 
     public void pre(Node root) {
