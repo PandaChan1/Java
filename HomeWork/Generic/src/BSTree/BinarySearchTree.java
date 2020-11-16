@@ -1,7 +1,7 @@
 package BSTree;
 
 class BSTree{
-    Node root  = null;
+    public Node root  = null;
     static class Node{
         public int data;
         public Node left;
@@ -17,7 +17,6 @@ class BSTree{
         if (root == null) {
             root = node;
             return;
-
         }
 
         Node parent = null;
@@ -31,7 +30,8 @@ class BSTree{
                 cur = cur.left;
             }else {
                 //数字相同没有处理
-                break;
+                cur.data = key;
+                return;
             }
         }
 
@@ -41,6 +41,7 @@ class BSTree{
         }else if (parent.data > key) {
             parent.left = node;
         }
+
     }
 
     //查找
@@ -58,8 +59,48 @@ class BSTree{
         return cur;
     }
 
+    //删除
+    public void remove(int key) {
+
+    }
+
+    public void pre(Node root) {
+        if (root == null) return;
+        System.out.print(root.data + " ");
+        pre(root.left);
+        pre(root.right);
+    }
+
+    public void in(Node root) {
+        if (root == null) return;
+        in(root.left);
+        System.out.print(root.data + " ");
+        in(root.right);
+    }
+
 }
 
 public class BinarySearchTree {
+    public static void main(String[] args) {
+        BSTree bsTree = new BSTree();
+        bsTree.put(10);
+        bsTree.put(30);
+        bsTree.put(15);
+        bsTree.put(2);
+        bsTree.put(45);
+
+        bsTree.pre(bsTree.root);
+        System.out.println();
+        bsTree.in(bsTree.root);
+        System.out.println();
+
+        try {
+            System.out.println(bsTree.find(30));
+        }catch (NullPointerException e) {
+            e.printStackTrace();
+            System.out.println("树中没有该数据");
+        }
+
+    }
 
 }
