@@ -12,5 +12,7 @@ public class TestDemo {
         System.out.println(Arrays.toString(SelectSort.selectSort(array)));
         System.out.println(Arrays.toString(HeapSort.heapSort(array)));
         System.out.println(Arrays.toString(QuickSort.quickSort(array,0,array.length - 1)));
+        System.out.println("归并");
+        System.out.println(Arrays.toString(MergeSort.mergeSort(array)));
     }
 }
