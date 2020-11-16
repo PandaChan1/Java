@@ -16,7 +16,7 @@ public class MergeSort {
     for(int index = 0,i = 0,j = 0;index < result.length;index++) {
 if (i >= left.length) { //左边走完，直接将右边追加到result
 result[index] = right[j++];
-}else if (j >= right.length) {  //右边走完，直接将左边追加到resul
+}else if (j >= right.length) {  //右边走完，直接将左边追加到result
 result[index] =left[i++];
 }else if (left[i] > right[j]) {  //左右都没走完时，比较大小，将小的放进result（升序）
 result[index] = right[j++];
