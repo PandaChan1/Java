@@ -137,6 +137,30 @@ public class MySortTest {
         System.out.println(Arrays.toString(array));
     }
 
+    public static int[] MergeSort(int[] array) {
+        if(array.length < 2) return array;
+        int mid = array.length / 2;
+        int[] left = Arrays.copyOfRange(array,0,mid);
+        int[] right = Arrays.copyOfRange(array,mid,array.length);
+        return Merge(MergeSort(left),MergeSort(right));
+    }
+
+    public static int[] Merge(int[] left,int[] right) {
+        int[] result = new int[left.length + right.length];
+        for(int index = 0,i = 0,j = 0;index < result.length;index++) {
+            if(i >= left.length) {  //左边走完，直接将右边的放入result
+                result[index] = right[j++];
+            }else if(j >= right.length) {  //右边走完，直接将左边的放入result
+                result[index] = left[i++];
+            }else if(left[i] > right[j]) {  //左右都没走完，比较然后放入result
+                result[index] = right[j++];
+            }else {
+                result[index] = left[i++];
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         int[] array = new int[]{9,1,2,5,7,4,8,6,3,5};
         bubbleSort(array);
@@ -146,5 +170,8 @@ public class MySortTest {
         System.out.println("快排");
         System.out.println(Arrays.toString(quickSort(array, 0, array.length - 1)));
         HeapSort(array);
+        System.out.println("归并");
+        System.out.println(Arrays.toString(MergeSort(array)));
+
     }
 }
