@@ -18,7 +18,15 @@ package Sort;
 public class QuickSort {
 
     public static void insertSort2(int[] array,int left,int right) {
-
+        for (int i = 0; i < array.length - 1; i++) {
+            int cur = array[i + 1];
+            int pre = i;
+            while(pre >= 0 && cur < array[pre]) {
+                array[pre + 1] = array[pre];
+                pre--;
+            }
+            array[pre + 1] = cur;
+        }
     }
 
 
@@ -43,19 +51,21 @@ public class QuickSort {
     //三数取中法
     public static void midOfThree(int[] array,int left,int right) {
         int mid = (left + right) / 2 ;
-        //array[mid] < array[left] < array[right]
-//        while(!(array[left] < array[right]) || ! (array[mid] < array[left])) {
-//            if (array[mid] > array[left]) {
-//                int temp = array[mid];
-//                array[mid] = array[left];
-//                array[left] = temp;
-//            }
-//            if(array[left] > array[right]) {
-//                int temp  = array[left];
-//                array[left] = array[right];
-//                array[right] = temp;
-//            }
-//        }
+        if (array[left] >= array[right]) {
+        swap(array,left,right);
+        }
+        if (array[left] <= array[mid]) {
+        swap(array,left,mid);
+        }
+        if (array[mid] >= array[right]) {
+        swap(array,left,mid);
+        }
+
+    }
+    private static  void swap(int[] array,int left,int right) {
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
 
 
