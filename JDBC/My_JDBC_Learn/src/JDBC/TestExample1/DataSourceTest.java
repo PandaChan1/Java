@@ -3,9 +3,12 @@ package JDBC.TestExample1;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 import javax.sql.DataSource;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-public class MySqlTest {
+public class DataSourceTest {
     public static void main(String[] args)  {
         Connection connection = null;
         Statement statement = null;
@@ -15,8 +18,12 @@ public class MySqlTest {
             Class.forName("com.mysql.jdbc.Driver");
             //第一步，创建数据库连接
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/learn?user=root&password=744631199&useSSL=false" +
+            //使用DataSource
+            DataSource dataSource = new MysqlDataSource();
+            ((MysqlDataSource)dataSource).setUrl("jdbc:mysql://localhost:3306/learn?user=root&password=744631199&useSSL=false" +
                     "&userUnicode=true&characterEncoding=UTF-8");
+            connection = dataSource.getConnection();
+
             System.out.println(connection);
 
             //第二步，创建了操作命令对象
