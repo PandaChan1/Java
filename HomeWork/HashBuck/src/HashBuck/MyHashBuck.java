@@ -69,13 +69,12 @@ class HashBuck{
     }
 
     public int getValue(int key) {
-        for (int i = 0; i < this.array.length; i++) {
-            for (Node cur = this.array[i];cur != null;cur = cur.next) {
+       int index = key % this.array.length;
+            for (Node cur = this.array[index];cur != null;cur = cur.next) {
                 if (cur.key == key) {
                     return cur.val;
                 }
             }
-        }
         return -1;
     }
 
@@ -86,7 +85,6 @@ class HashBuck{
 
 }
 public class MyHashBuck {
-
 
 
 }

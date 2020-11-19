@@ -21,6 +21,8 @@ class Person{
         return Objects.hash(id);
     }
 }
+
+
 class HashBuck<K,V>{
     static class Node<K,V>{
         public K key;
@@ -89,13 +91,13 @@ class HashBuck<K,V>{
     }
 
     public V getValue(K key) {
-        for (int i = 0; i < this.array.length; i++) {
-            for (Node<K,V> cur = this.array[i]; cur != null; cur = cur.next) {
+           int hash = key.hashCode();
+           int index = hash % this.array.length;
+            for (Node<K,V> cur = this.array[index]; cur != null; cur = cur.next) {
                 if (key.equals(cur.key)) {
                     return (V) cur.val;
                 }
             }
-        }
         return null;
     }
 
