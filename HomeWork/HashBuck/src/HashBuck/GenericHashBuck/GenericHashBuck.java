@@ -82,8 +82,8 @@ class HashBuck<K,V>{
                 curNext = cur.next;
                 //array[i] 下有链表
                 int hash = cur.hashCode();
-                int index = hash % this.array.length;
-                cur.next = newArray[index].next;
+                int index = hash % newArray.length;
+                cur.next = newArray[index];
                 newArray[index] = cur;
             }
         }
