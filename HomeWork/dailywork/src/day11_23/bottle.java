@@ -25,7 +25,6 @@ public class bottle {
         if (n == 2) {
             return  1;
         }
-
         return maxBottle(n / 3 + n % 3) + n / 3;
     }
 
