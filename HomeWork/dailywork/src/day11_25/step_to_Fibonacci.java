@@ -19,4 +19,5 @@ public class step_to_Fibonacci {
         System.out.println(Math.min(key - f1,f2 - key));
     }
 
+
 }
