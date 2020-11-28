@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginDao {
-public boolean query(String name,String password) {
+public boolean query(Person person) {
     Connection connection;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
@@ -16,8 +16,8 @@ public boolean query(String name,String password) {
 String sql  = "select username,password from userinfo where username = ? and password = ?";
     try {
         preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1,name);
-        preparedStatement.setString(2,password);
+        preparedStatement.setString(1,person.getUsername());
+        preparedStatement.setString(2,person.getPassword());
         System.out.println(sql);
         resultSet = preparedStatement.executeQuery();
         //不能使用 resultSet ！= null来判断，因为只要resultSet接收到结果就不为空

@@ -31,7 +31,7 @@ public class LoginRedirectTest extends HttpServlet {
         LoginDao loginDao = new LoginDao();
         //数据库验证DAO类示例
         //作业,使用jdbc，返回格式要求json格式，使用工具类方法
-        if (loginDao.query(person.getUsername(),person.getPassword())) {
+        if (loginDao.query(person)) {
             resp.sendRedirect("home.html");
         }else {
             try {

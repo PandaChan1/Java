@@ -33,7 +33,7 @@ public class LoginUseSessionServlet extends HttpServlet {
         LoginDao loginDao = new LoginDao();
         //数据库验证DAO类示例
         //作业,使用jdbc，返回格式要求json格式，使用工具类方法
-        if (loginDao.query(person.getUsername(),person.getPassword())) {
+        if (loginDao.query(person)) {
             //获取session对象（从服务器端）
             // 如果方法参数为true，表示如果没有，就创建一个session；无参默认是true
             // 如果为false，没有就返回null
