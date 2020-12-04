@@ -20,7 +20,6 @@ public class topK {
                 queue.offer(i);
             }
         }
-        List<Integer> list = new ArrayList<>();
         Integer[] integers = queue.toArray(new Integer[5]);
         Arrays.sort(integers);
         System.out.println(Arrays.toString(integers));
