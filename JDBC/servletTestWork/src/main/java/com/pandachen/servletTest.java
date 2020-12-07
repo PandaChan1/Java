@@ -46,7 +46,7 @@ public class servletTest extends HttpServlet {
                 "<ol>\n" +
                 "\t<li><a href=\"https://www.qq.com\" target=\"_blank\">高中</a></li>\n" +
                 "\t<li><a href=\"https://v.bitedu.vip\">大学</a></li>\n" +
-                "\t<li>西工院</li>\n" +
+                "\t<li>西工</li>\n" +
                 "</ol>\n" +
                 "\n" +
                 "</div>\n" +
