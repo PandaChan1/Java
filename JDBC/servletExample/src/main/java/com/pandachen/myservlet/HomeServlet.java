@@ -28,7 +28,7 @@ public class HomeServlet extends HttpServlet {
                 "<div>访问次数: :count:</div>"+
                 "\t<div class=\"user_info\">\n" +
                 "\t<h1>:name:</h1>\n" +
-                "    <p id=\"area\">春招冲刺班</p>\n" +
+                "    <p id=\"area\">我的练习</p>\n" +
                 "\t</div>\n" +
                 "\n" +
                 "<div class=\"hobby\">\n" +
@@ -46,7 +46,7 @@ public class HomeServlet extends HttpServlet {
                 "<ol>\n" +
                 "\t<li><a href=\"https://www.qq.com\" target=\"_blank\">高中</a></li>\n" +
                 "\t<li><a href=\"https://v.bitedu.vip\">大学</a></li>\n" +
-                "\t<li>西工院</li>\n" +
+                "\t<li>西京</li>\n" +
                 "</ol>\n" +
                 "\n" +
                 "</div>\n" +
