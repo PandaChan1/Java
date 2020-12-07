@@ -1,0 +1,22 @@
+.user_info h1{
+	font-size:  100px;
+	text-align:  center;
+	color: #006330;
+}
+#area{
+	text-align: center;
+	font-size: 50px;
+	color: #006330;
+}
+
+body{
+	background-image: url("../image/monk.png");
+	background-repeat: repeat;
+}
+
+div.hobby li{
+	color: #006644;
+}
+div.hobby li:hover{
+color: #2236ff;
+}
