@@ -5,6 +5,14 @@
     <title>留言板</title>
 </head>
 <body>
+
+<form method="post" action="post-message.api">
+
+    <input name="who" type="text">
+    <input name="what" type="text">
+    <button>发布留言</button>
+</form>
+
 <table>
     <thead>
     <tr>
@@ -14,12 +22,8 @@
         <th>说了什么</th>
     </tr>
     </thead>
-
-    <tbody>
-
-    </tbody>
-
 </table>
+
 
 <script src="js/jquery-3.5.0.min.js"></script>
 <script src="js/message-list.js"></script>
