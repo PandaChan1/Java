@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 /**
  * 找出基因序列中长度位n的最高比例的GC串
+ * 思路：循环每次读取n位基因序列，判断GC含量，并更新max和开始下标index
  */
 public class gene {
-    /**
-     * 思路：循环该基因序列，找出GC比例最高的子串的开始位置即可
-     */
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             while (scanner.hasNext()) {
