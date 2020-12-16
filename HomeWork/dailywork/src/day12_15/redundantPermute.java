@@ -40,12 +40,24 @@ public class redundantPermute {
 
         for (int j = i; j < nums.length; j++) {
             //剪枝处理
-            //todo 部分用例无法通过
-            if (i != j && (nums[i] == nums[j] || nums[j] == nums[j - 1])) continue;
-            swap(j,i,nums);
-            dfs(i + 1,nums);
-            swap(j,i,nums);
+            if (check(nums,i,j)){
+                swap(j,i,nums);
+                dfs(i + 1,nums);
+                swap(j,i,nums);
+            }
+
         }
+    }
+
+    //剪枝函数，每次递归都判断
+    //从当前位置，到结束位置，有没有和结束位置相等的元素，如果有将该元素跳过
+    private boolean check(int[] nums, int start, int end) {
+        for (int i = start; i < end; i++) {
+            if (nums[i] == nums[end]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void swap(int j, int i, int[] nums) {
