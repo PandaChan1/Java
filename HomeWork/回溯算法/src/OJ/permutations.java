@@ -20,7 +20,6 @@ public class permutations {
         System.out.println(p.permute(new int[]{1, 2, 3}));
     }
     public List<List<Integer>> permute(int[] nums) {
-
         dfs(nums,0,nums.length - 1);
         return res;
     }
