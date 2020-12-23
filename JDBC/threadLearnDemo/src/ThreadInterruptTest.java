@@ -3,6 +3,13 @@ public class ThreadInterruptTest {
         @Override
         public void run() {
             while(true) {
+
+                try{
+                    Thread.sleep(10 * 1000);
+                }catch (InterruptedException e){
+//                    break;
+                    System.out.println("出现异常");
+                }
                 System.out.println("Hello world");
                 boolean interrupted = Thread.interrupted();
                 if (interrupted) {  //判断状态
