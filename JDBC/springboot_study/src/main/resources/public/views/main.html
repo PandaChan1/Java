@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <script src="..//js/jquery@3.3.1/jquery.js"></script>
+    <script src="../js/jquery@3.3.1/jquery.js"></script>
     <script>
+        function addArticle() {
+          //  alert("add article")
+            window.location.href = "article.html?type=add";
+        }
+        function deleteArticle(id) {
+           alert("delete id is" + id)
+            //ajax请求，get方法url?id=xxx
+        }
+
+        function updateArticle(id) {
+            // alert("update id is" + id)
+            window.location.href = "article.html?type=update&id=" + id;
+        }
+
         $(function () {
             $.ajax({
                 url:"../data/articlelist.json",
@@ -13,12 +27,13 @@
                     if (resp.success) {
                         let data = resp.data;
                         let content = "";
-                        //todo 实现新增文章业务、删除、修改文章
                         //新增按钮只需要一个，修改、删除按钮和文章绑定，在拼接时拼接button
                         //再给button绑定事件，在事件中做ajax请求
                         for (let i in data) {
                             content += "<li>";
                             content +=    data[i].title;
+                            content += "<input type='button' onclick='updateArticle(" + data[i].id + ")' value='修改'/>";
+                            content += "<input type='button' onclick='deleteArticle(" + data[i].id + ")' value='删除'/>";
                             content += "</li>";
                         }
                         $("#article_list").html(content)
@@ -41,8 +56,9 @@
 <div style="height: 30px;background: aqua;padding-right: 20px">
     <!-- float 漂浮  margin 外边距  padding 内边距-->
     <a href="index.html" style="float: right">注销</a>
-
 </div>
+<input type="button" onclick="addArticle()" value="新增"/>
+
 <ul id="article_list"></ul>
 </body>
 </html>
