@@ -36,8 +36,10 @@
                 data.content = $("#content").val();
 
                 $.ajax({
-                    url:query.type == "add" ? "../data/articleAdd":"../data/articleUpdate",
-                    type:"post",
+                    //ajax根据类型进行不同的处理
+                    //从指定位置读取后端传回的json数据
+                    url:query.type == "add" ? "../data/articleAdd.json":"../data/articleUpdate.json",
+                    type:"get",
                     dataType:"application/json",//请求数据类型
                     data:data,
                     contentType:"json",  //响应的数据类型
