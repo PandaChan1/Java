@@ -74,12 +74,11 @@ public class flatten {
             if (curr.next != null) stack.push(curr.next);
             if (curr.child != null) {
                 stack.push(curr.child);
-                // don't forget to remove all child pointers.
+                // 移除child节点
                 curr.child = null;
             }
             prev = curr;
         }
-        // detach the pseudo node from the result
         pseudoHead.next.prev = null;
         return pseudoHead.next;
     }
