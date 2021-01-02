@@ -27,8 +27,8 @@ public class TestArgumentController {
     @PostMapping("/login")
     public Object login(@RequestParam String username,@RequestParam String password) {
         log.debug("用户名" + username + "  密码" + password);
-        Map<String,String> map = new HashMap<>();
-        map.put(username,password);
+        Map<String,Object> map = new HashMap<>();
+        map.put("success",true);
         return map;
     }
 
