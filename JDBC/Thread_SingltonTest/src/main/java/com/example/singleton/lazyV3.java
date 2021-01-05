@@ -13,7 +13,7 @@ public class lazyV3 {
                 //因为开始加锁到加上锁之间可能很长时间
                 //在这个过程中，也许instance已经不为空了，那么我门需要再次判断
                 if (instance == null) {
-                    instance = new lazyV3();
+                    instance = new lazyV3();   //这句可能会重排序
                 }
             }
         }
