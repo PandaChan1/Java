@@ -1,6 +1,6 @@
 package com.example.singleton;
 
-//二次判断提高性能
+
 public class lazyV4 {
     private volatile static lazyV4 instance = null;
     //volatile的目的：
