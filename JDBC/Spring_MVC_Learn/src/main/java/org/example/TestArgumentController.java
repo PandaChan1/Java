@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exception.APPexception;
 import org.example.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,6 +65,19 @@ public class TestArgumentController {
         log.debug("用户信息为 {}",user);
         Map<String,Object> map = new HashMap<>();
         map.put("ok",true);
+        return map;
+    }
+
+    @GetMapping("/ex")
+    public Object ex(Integer i) {
+        if (i == 1) {
+            throw new APPexception("log001","登陆错误");
+        } else {
+            int x = 1 / 0;
+        }
+        Map<String,Object> map = new HashMap<>();
+        map.put("chen",true);
+        map.put("wang",true);
         return map;
     }
 }

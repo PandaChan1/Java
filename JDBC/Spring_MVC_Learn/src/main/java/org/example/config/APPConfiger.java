@@ -3,13 +3,12 @@ package org.example.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.config.Interceptor.LoginInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //定义SpringMVC的启动配置类
-@Configuration
+//@Configuration
 public class APPConfiger implements WebMvcConfigurer {
 
     @Autowired
