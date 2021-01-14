@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.Datas.ArticleData;
 import org.example.model.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,5 +34,30 @@ public class ArticleController {
         map.put("user",user);
         map.put("articles", ArticleData.allArticles());
         return map;
+    }
+
+    @GetMapping("/queryByUser")
+    public Object queryByUser(HttpSession session) {
+//        User user = null;
+//        //获取session对象，如果未登录，返回null
+//        HttpSession session = req.getSession(false);
+//        if(session != null) {  //已经登录
+//            User sessionUser = (User) session.getAttribute("user");
+//            if (sessionUser != null) {
+//                user = sessionUser;
+//            }
+//        }
+
+        //通过用户id查询对应的文章，返回模拟数据
+
+        return ArticleData.userArticles();
+
+    }
+
+    @GetMapping("/query/{id}")
+    public Object queryById(@PathVariable Integer id) {
+        //数据库根据文章id查询文章信息
+        //模拟操作,直接返回第一个
+        return ArticleData.userArticles().get(0);
     }
 }

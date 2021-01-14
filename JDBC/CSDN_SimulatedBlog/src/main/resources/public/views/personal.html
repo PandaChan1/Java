@@ -3,8 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>个人博客管理</title>
+    <script src="../js/jquery@3.3.1/jquery.js"></script>
+    <script>
+        function addArticle() {
+            //  alert("add article")
+            window.location.href = "update.html?type=add";
+        }
+        function deleteArticle(id) {
+            alert("delete id is" + id)
+            //ajax请求，get方法url?id=xxx
+        }
+
+        function updateArticle(id) {
+            // alert("update id is" + id)
+            window.location.href = "update.html?type=update&id=" + id;
+        }
+
+        function logout() {
+            //ajax请求：后端删除session；前端解析数据，操作成功跳转首页
+            $.ajax({
+                url:'../api/user/logout',
+                success:function (r) {
+                    if (r.success){
+                        window.location.href = "../index.html";
+                    }else {
+                        alert("错误码：" + r.code + "\n错误信息：" + r.message);
+                    }
+                },
+                    error:function (req,textStatus,err) {
+                        if (err !== undefined && err != null) {
+                            alert(err)
+                        }else {
+                            alert(req.status)
+                        }
+                    }
+            }
+            )
+        }
+
+        $(function () {
+            $.ajax({
+                url:"../api/article/queryByUser",
+                contentType:"json",//响应数据类型
+                success:function (resp) {
+                    if (resp.success) {
+                        let data = resp.data;
+                        let content = "";
+                        //新增按钮只需要一个，修改、删除按钮和文章绑定，在拼接时拼接button
+                        //再给button绑定事件，在事件中做ajax请求
+                        for (let i in data) {
+                            content += "<li>";
+                            content +=    data[i].title;
+                            content += "<input type='button' onclick='updateArticle(" + data[i].id + ")' value='修改'/>";
+                            content += "<input type='button' onclick='deleteArticle(" + data[i].id + ")' value='删除'/>";
+                            content += "</li>";
+                        }
+                        $("#article_list").html(content)
+                    }else {
+                        alert("错误码:" + resp.code + "\n错误信息:" + resp.message)
+                    }
+                },
+                error:function (req,textStatus,err) {
+                    if (err !== undefined && err != null) {
+                        alert(err)
+                    }else {
+                        alert(req.status)
+                    }
+                }
+            })
+        })
+    </script>
 </head>
 <body>
+<div style="height: 30px;background: aqua;padding-right: 20px">
+    <!-- float 漂浮  margin 外边距  padding 内边距-->
+    <a href="../index.html" style="float: right">首页</a>
+    <a href="javascript:void(0)" onclick="logout()" style="float:right;">注销</a>
+</div>
+<input type="button" onclick="addArticle()" value="新增"/>
 
+<ul id="article_list"></ul>
 </body>
 </html>

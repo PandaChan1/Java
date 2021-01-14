@@ -1,5 +1,22 @@
 function logout(){
-
+$.ajax({
+    url:'/api/user/logout',  //首页注销
+    success:function (r) {
+    if (r.success) {
+    $("#index_unlogin").show();
+    $("#index_login").hide();
+    }else {
+        alert("错误码:" + r.code + "\n错误信息:" + r.message);
+    }
+    },
+    error:function (req,status,err) {
+        if (err !== undefined && err != null) {
+            alert(err)
+        }else {
+            alert(req.status)
+        }
+    }
+})
 }
 
 $(function () {
