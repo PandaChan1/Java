@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间：使用全限定名绑定Mapper接口-->
+<mapper namespace="org.example.mapper.UserMapper">
+    <!-- 定义结果集和java对象转换的关系-->
+    <resultMap id="userResultMap" type="org.example.model.User">
+        <!-- 指定结果集字段和对象属性的映射-->
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="nickname" property="nickname"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <result column="head" property="head"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <!-- 定义SQL语句，id绑定的是Mapper接口中的方法名，parameterType绑定方法的参数类型，resultMap绑定查询结果集映射的对象-->
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="userResultMap">
+        select * from article where id=#{id};
+    </select>
+</mapper>
