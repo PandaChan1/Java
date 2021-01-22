@@ -28,4 +28,40 @@ public class ArticleMapperTest {
         List<Article> articles = articleMapper.selectLike("%",2,4);
         System.out.println(articles);
     }
+
+    @Test
+    public void insertArticle(){
+        Article article = new Article();
+        article.setTitle("测试");
+        article.setContent("测试内容");
+        int n = articleMapper.insertArticle(article);
+        System.out.println(article);
+    }
+    @Test
+    public void selectWithId(){
+        List<Article> articles = articleMapper.selectWithId(4);
+        System.out.println(articles);
+    }
+
+    @Test
+    public void updateArticle() {
+        Article article = new Article();
+        article.setContent("public static void main(String[] args){}");
+        article.setId(2);
+        int i = articleMapper.updateArticle(article);
+        System.out.println(i);
+    }
+
+    @Test
+    public void deleteArticle() {
+        int b = articleMapper.deleteArticle("b");
+        System.out.println(b);
+    }
+
+    @Test
+    public void selectArticleOrderBy() {
+        List<Article> articles = articleMapper.selectArticleOrderBy("%排序%", "%public%", "desc");
+        articles.stream()
+                .forEach(System.out::println);
+    }
 }

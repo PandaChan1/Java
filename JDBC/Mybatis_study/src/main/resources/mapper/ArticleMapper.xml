@@ -21,4 +21,33 @@
              and
              id in (#{sid},#{eid});
     </select>
+    <insert id="insertArticle" parameterType="org.example.model.Article">
+        insert into article(id,title,content) values (
+        #{id},
+        #{title},
+        #{content}
+        );
+    </insert>
+
+    <select id="selectWithId" parameterType="java.lang.Integer" resultMap="articleResultMap">
+        select id,title,content,view_count,user_id,create_time
+        from article
+        where user_id=#{id};
+    </select>
+
+    <update id="updateArticle" parameterType="org.example.model.Article">
+        update article set content=#{content} where id=#{id};
+    </update>
+
+    <delete id="deleteArticle" parameterType="java.lang.String">
+<!-- 多表关联查询语句-->
+        delete from article using article,user where article.user_id=user.id
+        and user.username=#{username};
+    </delete>
+
+    <select id="selectArticleOrderBy" resultMap="articleResultMap">
+        select * from article
+        where title like #{title} and content like #{content} order by id ${By};
+    </select>
+
 </mapper>

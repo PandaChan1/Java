@@ -19,4 +19,23 @@
     <select id="selectById" parameterType="java.lang.Integer" resultMap="userResultMap">
         select * from article where id=#{id};
     </select>
+    <select id="selectPrefixString"  resultMap="userResultMap">
+        select *
+        from user
+        where username like #{username};
+    </select>
+    <select id="selectPrefixUser"  resultMap="userResultMap">
+        select *
+        from user
+        where username like #{username};
+    </select>
+
+    <insert id="insertUser" parameterType="org.example.model.User" keyProperty="id" useGeneratedKeys="true">
+        insert into user(username,password,nickname,birthday) values (
+        #{username},
+        #{password},
+        #{nickname},
+        #{birthday}
+        );
+    </insert>
 </mapper>
