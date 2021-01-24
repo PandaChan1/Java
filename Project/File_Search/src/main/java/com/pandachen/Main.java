@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
-        URL url = Main.class.getClassLoader().getResource("ui.xml");
+        URL url = Main.class.getClassLoader().getResource("ui.fxml");
 if (url == null) {
 throw new RuntimeException("ui.xml没有找到");
 }
