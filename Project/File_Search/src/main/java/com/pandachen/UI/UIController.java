@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 
 public class UIController {
     @FXML
-public GridPane rootPane;
+    public GridPane rootPane;
     @FXML
     public TextField search;
     @FXML

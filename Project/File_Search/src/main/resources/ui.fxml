@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <GridPane fx:controller="com.pandachen.UI.UIController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center"
+          xmlns:fx="pandachen" alignment="center"
           hgap="10" vgap="10" fx:id="rootPane">
     <Button onMouseClicked="#choose" text="选择文件夹" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
     <TextField fx:id="search" prefWidth="900" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
