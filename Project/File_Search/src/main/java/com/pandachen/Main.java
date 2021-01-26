@@ -1,5 +1,6 @@
 package com.pandachen;
 
+import com.pandachen.Service.DBService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,6 +27,9 @@ primaryStage.show();
     }
 
     public static void main(String[] args) {
+        DBService service = new DBService();
+        service.init();
+
         launch(args);
     }
 }

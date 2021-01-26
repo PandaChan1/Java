@@ -11,27 +11,27 @@
     <TextField fx:id="search" prefWidth="900" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
     <TableView fx:id="fileLists" prefWidth="900" prefHeight="600" GridPane.rowIndex="2" GridPane.columnIndex="0">
         <columns>
-            <TableColumn fx:id="nameColumn" text="名称">
+            <TableColumn fx:id="nameColumn" prefWidth="160" text="名称">
                 <cellValueFactory>
                     <PropertyValueFactory property="name"/>
                 </cellValueFactory>
             </TableColumn>
 
-            <TableColumn fx:id="pathColumn" text="路径">
+            <TableColumn fx:id="pathColumn"  prefWidth="160" text="路径">
                 <cellValueFactory>
                     <PropertyValueFactory property="path"/>
                 </cellValueFactory>
             </TableColumn>
 
-            <TableColumn fx:id="sizeColumn" text="大小">
+            <TableColumn fx:id="sizeColumn"  prefWidth="160" text="大小">
                 <cellValueFactory>
-                    <PropertyValueFactory property="size"/>
+                    <PropertyValueFactory property="sizeFormat"/>
                 </cellValueFactory>
             </TableColumn>
 
-            <TableColumn fx:id="modifiedColumn" text="修改时间">
+            <TableColumn fx:id="modifiedColumn"  prefWidth="160" text="修改时间">
                 <cellValueFactory>
-                    <PropertyValueFactory property="lastModified"/>
+                    <PropertyValueFactory property="modifiedFormat"/>
                 </cellValueFactory>
             </TableColumn>
         </columns>
