@@ -16,10 +16,23 @@
     <select id="selectLike" resultMap="articleResultMap">
         select
              *
-             from article where
-             title like #{username}
-             and
-             id in (#{sid},#{eid});
+             from article
+             <where>
+                 <if test="username != null">
+                   and  title like #{username}
+                 </if>
+                 <if test="sid != null">
+                   and id >=#{sid}
+                 </if>
+                 <if test="eid != null">
+                     and id &lt;=#{eid}
+                 </if>
+             </where>
+<!--              where
+            title like #{username}
+            and
+              id in (#{sid},#{eid});
+-->
     </select>
     <insert id="insertArticle" parameterType="org.example.model.Article">
         insert into article(id,title,content) values (
@@ -36,7 +49,17 @@
     </select>
 
     <update id="updateArticle" parameterType="org.example.model.Article">
-        update article set content=#{content} where id=#{id};
+        update article
+        set
+        <trim suffixOverrides=",">
+            <if test="title != null" >
+                title=#{title},
+            </if>
+            <if test="content != null">
+                content=#{content},
+            </if>
+        </trim>
+        where id=#{id};
     </update>
 
     <delete id="deleteArticle" parameterType="java.lang.String">

@@ -38,4 +38,12 @@
         #{birthday}
         );
     </insert>
+
+    <delete id="batchDelete">
+        delete form user
+        where id in
+        <foreach collection="list" item="i" open="(" close=")" separator=",">
+            #{i}
+        </foreach>
+    </delete>
 </mapper>
