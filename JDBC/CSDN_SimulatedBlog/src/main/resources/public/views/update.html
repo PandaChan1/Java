@@ -29,12 +29,12 @@
                 data.id = query.id;
                 //修改文章视图,初始化文章页面
                 $.ajax({
-                    url:'../api/article/query' + query.id,
+                    url:'../api/article/query/' + query.id,
                     success:function (r) {
                     if (r.success) {
                         //响应成功时，直接设置title和content
                         let data = r.data;
-                        $("#title").html(data.title);
+                        $("#title").val(data.title);
                         $("#content").html(data.content);
                     }else {
                         alert("错误码:" + resp.code + "\n错误信息:" + resp.message)

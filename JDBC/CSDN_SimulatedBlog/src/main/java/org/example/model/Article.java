@@ -6,14 +6,20 @@ import lombok.ToString;
 
 import java.util.Date;
 
-@ToString
 @Getter
 @Setter
+@ToString
 public class Article {
-private Integer id;
-private String title;
-private String content;
+    
+    private Integer id;
 
-private Integer userId;  //外键关联到User表
-private Date createTime;  //创建日期
+    private String title;
+
+    private String content;
+
+    private Integer userId;
+
+    private Date createTime;
+
+    private Integer viewCount;
 }
