@@ -35,6 +35,7 @@
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.pandachen.example.model.User" useGeneratedKeys="true">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
+
       <if test="username != null">
         username,
       </if>
@@ -119,4 +120,10 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from user
+    where username=#{username}
+  </select>
 </mapper>

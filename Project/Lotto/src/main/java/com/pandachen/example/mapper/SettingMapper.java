@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface SettingMapper extends BaseMapper<Setting> {
+    Setting selectByUserId(Integer id);
 }
