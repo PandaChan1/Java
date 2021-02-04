@@ -73,4 +73,33 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="batchInsert" >
+    insert into record (member_id,award_id) values
+    <foreach collection="memberId" item="item"  separator=",">
+      (#{item},#{awardId})
+    </foreach>
+  </insert>
+  <delete id="deleteByMemberId">
+    delete from record
+    where member_id=#{memberId}
+  </delete>
+  <delete id="deleteByAwardId">
+    delete from record
+    where award_id=#{awardId}
+  </delete>
+  <!--多表关联删除
+从数据表t1中把那些id值在数据表t2里有匹配的记录全删除掉1
+
+ DELETE t1 FROM t1,t2 WHERE t1.id=t2.id
+DELETE FROM t1 USING t1,t2 WHERE t1.id=t2.id
+   -->
+  <delete id="deleteByUserId">
+delete record
+from user,setting,award,member,record
+where user.id=setting.user_id
+and setting.id = award.setting_id
+and setting.id = member.setting_id
+and (award.id = record.award_id or member.id = record.member_id)
+and user.id = #{id};
+  </delete>
 </mapper>

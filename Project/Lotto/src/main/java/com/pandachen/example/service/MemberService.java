@@ -15,4 +15,17 @@ public class MemberService {
     public List<Member> selectBySetId(Integer id) {
         return memberMapper.selectBySetId(id);
     }
+
+
+    public int add(Member member) {
+        return memberMapper.insertSelective(member);
+    }
+
+    public int update(Member member) {
+        return memberMapper.updateByPrimaryKeySelective(member);
+    }
+
+    public int delete(Integer id) {
+        return memberMapper.deleteByPrimaryKey(id);
+    }
 }

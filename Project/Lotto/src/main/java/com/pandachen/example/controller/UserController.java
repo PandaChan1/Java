@@ -4,10 +4,7 @@ import com.pandachen.example.exception.APPexception;
 import com.pandachen.example.model.User;
 import com.pandachen.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,6 +45,13 @@ public class UserController {
         //校验通过，保存到session
         HttpSession session = req.getSession();
         session.setAttribute("user",userData);
+        return null;
+    }
+
+    //注销就是删除session
+    @GetMapping("/logout")
+    public Object logout(HttpSession session) {
+        session.removeAttribute("user");
         return null;
     }
 }

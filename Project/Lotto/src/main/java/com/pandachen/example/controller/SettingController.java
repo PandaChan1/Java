@@ -49,4 +49,13 @@ public class SettingController {
 
         return setting;
     }
+
+    @GetMapping("/update")
+    public Object update(HttpSession session,Integer batchNumber) {
+        //修改单次抽奖的人数
+        User user = (User)session.getAttribute("user");
+        Integer id = user.getId();
+        int n = settingService.updateByUserId(id,batchNumber);
+        return null;
+    }
 }

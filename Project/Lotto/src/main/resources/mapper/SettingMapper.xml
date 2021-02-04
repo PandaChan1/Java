@@ -79,4 +79,10 @@
     from setting
     where user_id = #{id}
   </select>
+
+  <update id="updateByUserId">
+    update setting
+    set batch_number = #{batchNumber}
+    where user_id = ${id}
+  </update>
 </mapper>
