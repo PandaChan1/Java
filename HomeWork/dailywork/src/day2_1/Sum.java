@@ -5,16 +5,25 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ *@ClassName: Sum
+ *@Description n个数中，哪几个数的和为target
+ *@Author PandaChan1
+ *@Date 2021/2/6
+ *@Time 19:52
+ */
+
+
 public class Sum {
     private static List<List<Integer>> res;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while(sc.hasNext()) {
             res = new ArrayList<>();
-            int n = sc.nextInt();
-            int m = sc.nextInt();
+            int n = sc.nextInt();  //从1-n个数
+            int m = sc.nextInt(); //和为m的数组，按照升序输出
             Stack<Integer> stack = new Stack<>();
-            dfs(1,m,n,stack);
+            dfs(1,m,n,stack);  //回溯
 
             for (int i = 0; i < res.size(); i++) {
                 List<Integer> tmp = res.get(i);
