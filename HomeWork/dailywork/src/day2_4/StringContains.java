@@ -30,7 +30,7 @@ public class StringContains {
         while (in.hasNext())
         {
             boolean contain = true;
-            StringBuffer input = new StringBuffer(in.next());
+            StringBuilder input = new StringBuilder(in.next());
             char[] find = in.next().toCharArray();
             for (char c : find)
             {
