@@ -40,8 +40,10 @@ public class UIController implements Initializable {
     @FXML
     public void choose(MouseEvent mouseEvent) {
         DirectoryChooser chooser = new DirectoryChooser();
+        //文件选择器
+        //文件选择器需要传入一个window，这个window用rootPane来生成
         File root = chooser.showDialog(rootPane.getScene().getWindow());
-
+        //如果选择了文件,返回类型是一个File;如果直接关闭跳出的窗口root就为null
         if(root == null) {
             return;
         }
@@ -57,9 +59,11 @@ public class UIController implements Initializable {
     }
 
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         StringProperty stringProperty = search.textProperty();
+        //StringProperty  可以绑定一些东西事件
         stringProperty.addListener((observable, oldValue, newValue) -> {
             List<FileMeta> query = fileService.query(newValue.trim());
             Platform.runLater(new Runnable() {
