@@ -7,13 +7,16 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.DirectoryChooser;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -71,6 +74,22 @@ public class UIController implements Initializable {
                 public void run() {
                     fileLists.getItems().clear();
                     fileLists.getItems().addAll(query);
+                    fileLists.setRowFactory(tv->{
+                        TableRow<FileMeta> item = new TableRow<FileMeta>();
+                        item.setOnMouseClicked(event -> {
+                            if (event.getClickCount() == 2 && (!item.isEmpty())) {
+                                FileMeta meta = item.getItem();
+//                                System.out.println(meta);
+                                //扫描结果，双击打开系统资源管理器
+                                try {
+                                    Desktop.getDesktop().open(new File(meta.getPath() + "\\" + meta.getName()));
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    return item;
+                    });
                 }
             });
         });
