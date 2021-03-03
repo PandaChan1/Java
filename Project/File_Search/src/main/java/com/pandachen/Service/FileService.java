@@ -7,6 +7,7 @@ import com.pandachen.Model.FileMeta;
 import com.pandachen.Util.ListUtil;
 
 import java.io.File;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,12 +22,20 @@ public class FileService {
     }
 
     public void save(List<FileMeta> filelist) {  //存储
-        saveDAO.save(filelist);
+        try {
+            saveDAO.save(filelist);
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void delete(List<FileMeta> filelist) {  //删除
         List<Integer> idList = filelist.stream().map(FileMeta::getId).collect(Collectors.toList());
-        deleteDAO.delete(idList);
+        try {
+            deleteDAO.delete(idList);
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
    public void differ(String path,List<FileMeta> filelist) {

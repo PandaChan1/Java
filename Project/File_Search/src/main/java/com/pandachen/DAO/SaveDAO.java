@@ -9,14 +9,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class SaveDAO {
-    public void save(List<FileMeta> fileList)  {
+    public void save(List<FileMeta> fileList) throws SQLException {
+        Connection connection = null;
+        PreparedStatement ps = null;
         try {
             String sql = "insert into file_meta " +
                     "(name,path,is_directory,pinyin,pinyin_first,size,last_modified)" +
                     " values (?,?,?,?,?,?,?)";
-            Connection connection = DBUtil.getConnection();
+            connection = DBUtil.getConnection();
 
-            PreparedStatement ps = connection.prepareStatement(sql);
+            ps = connection.prepareStatement(sql);
             for (FileMeta f :
                     fileList) {
                 ps.setString(1, f.getName());
@@ -31,6 +33,10 @@ public class SaveDAO {
 
         }catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            if (ps != null) {
+                ps.close();
+            }
         }
     }
 }

@@ -9,15 +9,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DeleteDAO {
-   public void delete(List<Integer> idList) {
+   public void delete(List<Integer> idList) throws SQLException {
+       PreparedStatement ps = null;
+       Connection connection = null;
        try {
-           Connection connection = DBUtil.getConnection();
+           connection = DBUtil.getConnection();
            List<String> quadQuesionMark = idList.stream()
                    .map(id -> "?")
                    .collect(Collectors.toList());
            String mark = String.join(",", quadQuesionMark);
            String sql = String.format("delete from file_meta where id in (%s)", mark);
-           PreparedStatement ps = connection.prepareStatement(sql);
+          ps = connection.prepareStatement(sql);
            for (int i = 0; i < idList.size(); i++) {
                int id = idList.get(i);
                ps.setInt(i + 1, id);
@@ -25,6 +27,10 @@ public class DeleteDAO {
            ps.executeUpdate();
        }catch (SQLException e) {
            throw new RuntimeException(e);
+       }finally {
+           if (ps != null) {
+                ps.close();
+           }
        }
    }
 }
