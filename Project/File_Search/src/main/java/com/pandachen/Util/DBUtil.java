@@ -20,7 +20,7 @@ public class DBUtil {
             String classPath = DBUtil.class.getProtectionDomain().getCodeSource().getLocation().getFile();
             File classDir = new File(URLDecoder.decode(classPath, "UTF-8"));
             return classDir.getParent() + File.separator + "file_searcher.db";
-        }catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
     }
@@ -36,15 +36,15 @@ public class DBUtil {
     //单例模式二次判断
     private static Connection initConnection() {
         if (dataSource == null) {
-         synchronized (DBUtil.class) {
-    if (dataSource == null) {
-        initDataSource();
-    }
-         }
+            synchronized (DBUtil.class) {
+                if (dataSource == null) {
+                    initDataSource();
+                }
+            }
         }
-        try{
+        try {
             return dataSource.getConnection();
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -54,5 +54,6 @@ public class DBUtil {
 
     public static Connection getConnection() {
         return connectionThreadLocal.get();
+
     }
 }

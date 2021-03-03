@@ -30,7 +30,7 @@ public class FileMeta {
     }
 
     // 提供给DB查询后使用
-    public FileMeta(Integer id, String name, String pinyin,String pinyinFirst,String path, boolean directory, Long size, Long lastModifiedTimestamp) {
+    public FileMeta(Integer id, String name, String pinyin, String pinyinFirst, String path, boolean directory, Long size, Long lastModifiedTimestamp) {
         this.id = id;
         this.name = name;
         this.pinyin = pinyin;

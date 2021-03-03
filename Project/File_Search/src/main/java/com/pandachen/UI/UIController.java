@@ -2,6 +2,7 @@ package com.pandachen.UI;
 
 import com.pandachen.Model.FileMeta;
 import com.pandachen.Service.FileService;
+import com.pandachen.Task.ScanTask;
 import javafx.application.Platform;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -20,6 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class UIController implements Initializable {
@@ -41,7 +44,7 @@ public class UIController implements Initializable {
     private final FileService fileService = new FileService();
 
     @FXML
-    public void choose(MouseEvent mouseEvent) {
+    public void choose(MouseEvent mouseEvent) throws InterruptedException{
         DirectoryChooser chooser = new DirectoryChooser();
         //文件选择器
         //文件选择器需要传入一个window，这个window用rootPane来生成
@@ -51,14 +54,31 @@ public class UIController implements Initializable {
             return;
         }
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                fileService.scan(root);
-            }
-        });
+        ExecutorService threadPool = new ThreadPoolExecutor(10,
+                10,
+                0,
+                TimeUnit.SECONDS,
+                new LinkedBlockingQueue<>());
+        AtomicInteger counter = new AtomicInteger(0);
+        CountDownLatch doneSignal = new CountDownLatch(1);
 
-        thread.start();
+        ScanTask task = new ScanTask(root,threadPool,counter,doneSignal);
+
+        counter.incrementAndGet();
+        threadPool.execute(task);
+
+        doneSignal.await();
+        threadPool.shutdown();
+
+
+//        Thread thread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                fileService.scan(root);
+//            }
+//        });
+//
+//        thread.start();
     }
 
 

@@ -33,7 +33,7 @@ public class QueryDAO {
                 long length = resultSet.getLong("size");
                 long lastModified = resultSet.getLong("last_modified");
 
-                FileMeta fileMeta = new FileMeta(id, name, pinyin,pinyin_first,path, directory, length, lastModified);
+                FileMeta fileMeta = new FileMeta(id,name, pinyin,pinyin_first,path, directory, length, lastModified);
                 result.add(fileMeta);
             }
             return result;
