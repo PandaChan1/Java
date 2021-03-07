@@ -41,7 +41,6 @@ public class FileService {
    public void differ(String path,List<FileMeta> filelist) {
        System.out.println(path);
         List<FileMeta> queryRes = queryDAO.queryByPath(path);
-       System.out.println(queryRes);
         List<FileMeta>  delList = ListUtil.differenceSet(queryRes,filelist);
         delete(delList);
         List<FileMeta>  saveList = ListUtil.differenceSet(filelist,queryRes);
