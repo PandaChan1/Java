@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueryDAO {
-    public List<FileMeta> query(String key) {
+    public  List<FileMeta> query(String key) {
         try {
             Connection connection = DBUtil.getConnection();
             String sql = "select id,name,path,is_directory,pinyin,pinyin_first,size,last_modified from file_meta where name like ? or pinyin like ? or pinyin_first like ?";

@@ -59,6 +59,7 @@ public class UIController implements Initializable {
                 0,
                 TimeUnit.SECONDS,
                 new LinkedBlockingQueue<>());
+
         AtomicInteger counter = new AtomicInteger(0);
         CountDownLatch doneSignal = new CountDownLatch(1);
 

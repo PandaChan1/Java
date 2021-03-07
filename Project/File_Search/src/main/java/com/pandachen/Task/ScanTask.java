@@ -17,6 +17,7 @@ public class ScanTask implements Runnable{
     private final CountDownLatch doneSignal;
     private final FileService fileService = new FileService();
 
+
     public ScanTask(File directory, ExecutorService threadPool, AtomicInteger counter, CountDownLatch doneSignal) {
         this.directory = directory;
         this.threadPool = threadPool;
@@ -46,12 +47,13 @@ public class ScanTask implements Runnable{
 
         //公用一个线程池，直接给线程池加锁，变成串行
         //测试可行＜（＾－＾）＞
-        synchronized (threadPool) {
-            fileService.differ(directory.getAbsolutePath(),res);
-        }
-
-
-
+//synchronized (threadPool) {
+    try {
+        fileService.differ(directory.getAbsolutePath(),res);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+//}
 
 
         if (counter.decrementAndGet() == 0) {

@@ -9,9 +9,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class SaveDAO {
-    public synchronized void save(List<FileMeta> fileList)  {
+    public  void save(List<FileMeta> fileList)  {
         Connection connection;
         PreparedStatement ps;
+
         try {
             String sql = "insert into file_meta " +
                     "(name,path,is_directory,pinyin,pinyin_first,size,last_modified)" +
@@ -28,7 +29,9 @@ public class SaveDAO {
                 ps.setString(5,f.getPinYinFirst());
                 ps.setLong(6,f.getSize());
                 ps.setLong(7,f.getLastModified());
+
                 ps.executeUpdate();
+
             }
         }catch (SQLException e) {
             throw new RuntimeException(e);

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DeleteDAO {
-   public synchronized void delete(List<Integer> idList)  {
+   public  void delete(List<Integer> idList)  {
        PreparedStatement ps;
        Connection connection;
        try {
