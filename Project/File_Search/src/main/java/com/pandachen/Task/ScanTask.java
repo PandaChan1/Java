@@ -45,9 +45,13 @@ public class ScanTask implements Runnable{
 
 
         //公用一个线程池，直接给线程池加锁，变成串行
-        synchronized (threadPool) {
+        //测试可行＜（＾－＾）＞
+//        synchronized (threadPool) {
             fileService.differ(directory.getAbsolutePath(),res);
-        }
+//        }
+
+
+
 
 
         if (counter.decrementAndGet() == 0) {

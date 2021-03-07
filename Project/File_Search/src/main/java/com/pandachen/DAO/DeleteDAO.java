@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DeleteDAO {
-   public void delete(List<Integer> idList) throws SQLException {
-       PreparedStatement ps = null;
-       Connection connection = null;
+   public synchronized void delete(List<Integer> idList)  {
+       PreparedStatement ps;
+       Connection connection;
        try {
            connection = DBUtil.getConnection();
            List<String> quadQuesionMark = idList.stream()
@@ -27,10 +27,6 @@ public class DeleteDAO {
            ps.executeUpdate();
        }catch (SQLException e) {
            throw new RuntimeException(e);
-       }finally {
-           if (ps != null) {
-                ps.close();
-           }
        }
    }
 }

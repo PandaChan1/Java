@@ -6,39 +6,49 @@ import com.pandachen.DAO.SaveDAO;
 import com.pandachen.Model.FileMeta;
 import com.pandachen.Util.ListUtil;
 
-import java.io.File;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class FileService {
     private final QueryDAO queryDAO = new QueryDAO();
-    private final DeleteDAO deleteDAO = new DeleteDAO();
-    private final SaveDAO saveDAO = new SaveDAO();
+    //解决sqlite is blocked，方法二，改成私有静态对象，提供统一的get方法，单例模式
+    //测试可行＜（＾－＾）＞
+//    private final DeleteDAO deleteDAO = new DeleteDAO();
+    private static DeleteDAO deleteDAO;
+//    private final SaveDAO saveDAO = new SaveDAO();
+    private static SaveDAO saveDAO;
+
+
+    public static DeleteDAO getDeleteDAO() {
+        if (deleteDAO == null) {
+                    deleteDAO = new DeleteDAO();
+        }
+        return deleteDAO;
+    }
+
+    public static SaveDAO getSaveDAO() {
+        if (saveDAO == null) {
+            saveDAO = new SaveDAO();
+        }
+        return saveDAO;
+    }
 
     public List<FileMeta> query(String key) {  //查询
         return queryDAO.query(key);
     }
 
-    public void save(List<FileMeta> filelist) {  //存储
-        try {
-            saveDAO.save(filelist);
-        }catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public  void save(List<FileMeta> filelist) {  //存储
+//        saveDAO.save(filelist);
+        getSaveDAO().save(filelist);
     }
 
-    public void delete(List<FileMeta> filelist) {  //删除
+    public  void delete(List<FileMeta> filelist) {  //删除
         List<Integer> idList = filelist.stream().map(FileMeta::getId).collect(Collectors.toList());
-        try {
-            deleteDAO.delete(idList);
-        }catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+//        deleteDAO.delete(idList);
+        getDeleteDAO().delete(idList);
     }
 
-   public void differ(String path,List<FileMeta> filelist) {
+   public  void differ(String path,List<FileMeta> filelist) {
        System.out.println(path);
         List<FileMeta> queryRes = queryDAO.queryByPath(path);
         List<FileMeta>  delList = ListUtil.differenceSet(queryRes,filelist);
@@ -47,25 +57,25 @@ public class FileService {
         save(saveList);
     }
 
-    public void scan(File root) {
-        
-        if (!root.isDirectory()) {
-            return;
-        }
-
-        File[] files = root.listFiles();
-        if (files == null) {
-            return;
-        }
-
-        List<FileMeta> res = new ArrayList<>();
-        for (File f :
-                files) {
-            scan(f);
-            if (f.isFile()) {
-                res.add(new FileMeta(f));
-            }
-        }
-        differ(root.getAbsolutePath(),res);
-    }
+//    public void scan(File root) {
+//
+//        if (!root.isDirectory()) {
+//            return;
+//        }
+//
+//        File[] files = root.listFiles();
+//        if (files == null) {
+//            return;
+//        }
+//
+//        List<FileMeta> res = new ArrayList<>();
+//        for (File f :
+//                files) {
+//            scan(f);
+//            if (f.isFile()) {
+//                res.add(new FileMeta(f));
+//            }
+//        }
+//        differ(root.getAbsolutePath(),res);
+//    }
 }
