@@ -22,13 +22,14 @@ public class containt_most_water {
 
         while(i < j) {
             int area = (j - i) * Math.min(height[i],height[j]);
-            res = Math.max(res,area);
+
 
             if (height[i] < height[j]) {
                 i++;
             }else {
                 j--;
             }
+            res = Math.max(res,area);
         }
         System.out.println(res);
     }
